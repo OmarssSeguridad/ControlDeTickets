@@ -84,7 +84,7 @@
 
                 <div class="links">
                    <a href="{{ url('admin/login') }}">Administrador</a>
-                    <a href="{{ url('alumno/login') }}">Usuario</a>
+                    <a href="{{ url('usuario/login') }}">Usuario</a>
                 </div>
             </div>
         </div>

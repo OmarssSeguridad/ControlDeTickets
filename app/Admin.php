@@ -16,7 +16,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email','cargo','telefono', 'password',
     ];
 
     /**
@@ -25,7 +25,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','tipoUsuario',
     ];
 
     /**
@@ -37,5 +37,18 @@ class Admin extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new AdminResetPassword($token));
+    }
+
+        public function sucursal()
+    {
+        return $this->belongsTo(Sucursal::class);
+    }
+    public function usuario()
+    {
+        return $this->belongsTo(Usuario::class);
+    }
+    public function tickets()
+    {
+        return $this->belongsTo(Tickets::class);
     }
 }
