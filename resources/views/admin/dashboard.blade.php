@@ -1,16 +1,13 @@
 @extends('admin.layout.main')
 @section('content')
-    <div class="wrapper">
-        <div class="sidebar" data-image="{{ asset('img/sidebar-5.jpg') }}">
+    
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
         Tip 2: you can also add an image using data-image tag
     -->
-         
 
 
-            <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -221,7 +218,41 @@
                     </div>
                 </div>
             </div>
-            
+            <footer class="footer">
+                <div class="container">
+                    <nav>
+                        <ul class="footer-menu">
+                            <li>
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Company
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-center">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            <a href="">Hensa Distribuciones</a>, Hecho con ❤️ 
+                        </p>
+                    </nav>
+                </div>
+            </footer>
         </div>
     </div>
 @endsection
