@@ -10,3 +10,7 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->name('home');
 
+Route::get('/perfil','perfilController@perfilAdministrador');
+Route::get('/administradores','perfilController@mostrarAdministradores');
+Route::get('/usuarios','perfilController@mostrarUsuarios');
+Route::get('/tickets','perfilController@mostrarTickets');

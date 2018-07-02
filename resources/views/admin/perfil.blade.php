@@ -6,21 +6,21 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Edit Profile</h4>
+                                    <h4 class="card-title">Editar Perfil</h4>
                                 </div>
                                 <div class="card-body">
                                     <form>
                                         <div class="row">
                                             <div class="col-md-5 pr-1">
                                                 <div class="form-group">
-                                                    <label>Company (disabled)</label>
-                                                    <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                                                    <label>Empresa </label>
+                                                    <input type="text" class="form-control" disabled="" placeholder="Company" value="Hensa Distribuciones S.A. de C.V.">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 px-1">
                                                 <div class="form-group">
-                                                    <label>Username</label>
-                                                    <input type="text" class="form-control" placeholder="Username" value="michael23">
+                                                    <label>Nombre</label>
+                                                    <input type="text" class="form-control" placeholder="Username" value="michael23" >
                                                 </div>
                                             </div>
                                             <div class="col-md-4 pl-1">
@@ -94,7 +94,7 @@
                                 <div class="card-body">
                                     <div class="author">
                                         <a href="#">
-                                            <img class="avatar border-gray" src="../assets/img/faces/face-3.jpg" alt="...">
+                                            <img class="avatar border-gray" src="{{ asset('/img/faces/face-3.jpg') }}" alt="...">
                                             <h5 class="title">Mike Andrew</h5>
                                         </a>
                                         <p class="description">
@@ -124,8 +124,42 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <footer class="footer">
+                <div class="container">
+                    <nav>
+                        <ul class="footer-menu">
+                            <li>
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Company
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-center">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            <a href="">Hensa Distribuciones</a>, Hecho con ❤️ 
+                        </p>
+                    </nav>
+                </div>
+
+            </footer>
   
 
 @endsection
