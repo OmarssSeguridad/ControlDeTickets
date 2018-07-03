@@ -41,14 +41,15 @@ class Admin extends Authenticatable
 
         public function sucursal()
     {
-        return $this->belongsTo(Sucursal::class);
+        return $this->hasMany(Sucursal::class);
     }
-    public function usuario()
+        public function cargo()
     {
-        return $this->belongsTo(Usuario::class);
+        return $this->belongsTo(Cargo::class);
     }
+
     public function tickets()
     {
-        return $this->belongsTo(Tickets::class);
+        return $this->hasMany(Tickets::class);
     }
 }

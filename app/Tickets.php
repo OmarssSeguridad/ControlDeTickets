@@ -9,15 +9,15 @@ class Tickets extends Model
 
     public function usuario()
     {
-        return $this->hasMany(Usuario::class);
+        return $this->belongsTo(Usuario::class);
     }
     public function admin()
     {
-        return $this->hasMany(Admin::class);
+        return $this->belongsTo(Admin::class);
     }
-    public function tickets()
+    public function status()
     {
-        return $this->hasMany(Tickets::class);
+        return $this->belongsTo(Status::class);
     }
 
 }
