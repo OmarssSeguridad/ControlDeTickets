@@ -9,10 +9,10 @@ class Sucursal extends Model
 	
    	public function usuario()
     {
-        return $this->belongsTo(usuario::class);
+        return $this->hasMany(Usuario::class);
     }	
-   	public function tickets()
+   	public function admin()
     {
-        return $this->belongsTo(Tickets::class);
+        return $this->belongsTo(Admin::class);
     }
 }

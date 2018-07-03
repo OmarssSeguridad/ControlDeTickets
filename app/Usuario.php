@@ -41,11 +41,15 @@ class Usuario extends Authenticatable
    
     public function sucursal()
     {
-        return $this->hasMany(Sucursal::class);
+        return $this->belongsTo(Sucursal::class);
+    }
+    public function cargo()
+    {
+        return $this->belongsTo(Cargo::class);
     }
 
     public function tickets()
     {
-        return $this->belongsTo(Tickets::class);
+        return $this->hasMany(Tickets::class);
     }
 }
