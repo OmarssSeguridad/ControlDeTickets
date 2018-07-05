@@ -46,7 +46,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./table.html">
+                        <a class="nav-link" href="{{ url('/admin/altaAdmin') }}">
                             <i class="nc-icon nc-paper-2"></i>
                             <p>Alta Administrador</p>
                         </a>

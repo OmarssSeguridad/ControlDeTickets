@@ -6,10 +6,11 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Editar Perfil</h4>
+                                    <h4 class="card-title">Alta Administrador</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/register') }}">
+                                {{ csrf_field() }}
                                         <div class="row">
                                             <div class="col-md-5 pr-1">
                                                 <div class="form-group">
@@ -22,13 +23,13 @@
                                             <div class="col-md-3 px-1">
                                                 <div class="form-group">
                                                     <label>Nombre</label>
-                                                    <input type="text" class="form-control" placeholder="Username" name="name" value="{{Auth::user()->name}}" >
+                                                    <input type="text" class="form-control" placeholder="Username" name="name" value="{{ old('name') }}" autofocus >
                                                 </div>
                                             </div>
                                             <div class="col-md-4 pl-1">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Correo Electronico</label>
-                                                    <input type="email" disabled="" class="form-control" placeholder="Email" name="correo" value="{{Auth::user()->email}}">
+                                                    <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -36,13 +37,13 @@
                                             <div class="col-md-6 pr-1">
                                                 <div class="form-group">
                                                     <label>Departamento</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento" name="departamento" value="{{Auth::user()->departamento}}">
+                                                    <input type="text" class="form-control" placeholder="Departamento" name="departamento" value="{{ old('departamento') }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 pl-1">
                                                 <div class="form-group">
                                                     <label>Cargo</label>
-                                                    <input type="text" class="form-control" placeholder="Cargo" name="cargo" value="{{Auth::user()->cargo}}">
+                                                    <input type="text" class="form-control" placeholder="Cargo" name="cargo" value="{{ old('cargo') }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -50,7 +51,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Direccion</label>
-                                                    <input type="text" class="form-control" placeholder="Direccion" name="direccion" value="{{Auth::user()->direccion}}">
+                                                    <input type="text" class="form-control" placeholder="Direccion" name="direccion" value="{{ old('direccion') }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -58,25 +59,25 @@
                                             <div class="col-md-4 pr-1">
                                                 <div class="form-group">
                                                     <label>Sucursal</label>
-                                                    <input type="text" class="form-control" placeholder="Sucursal" name="sucursal" value="{{Auth::user()->sucursal}}">
+                                                    <input type="text" class="form-control" placeholder="Sucursal" name="sucursal" value="{{ old('sucursal') }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 px-1">
                                                 <div class="form-group">
                                                     <label>No. Empleado</label>
-                                                    <input type="number" disabled="" class="form-control" placeholder="0000" name="noEmpleado" value="{{Auth::user()->noEmpleado}}">
+                                                    <input type="number" class="form-control" placeholder="0000" name="noEmpleado" value="{{ old('noEmpleado') }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 pl-1">
                                                 <div class="form-group">
                                                     <label>Telefono</label>
-                                                    <input type="number" class="form-control" placeholder="(000)0000000" name="telefono" value="{{Auth::user()->telefono}}">
+                                                    <input type="number" class="form-control" placeholder="(000)0000000" name="telefono" value="{{ old('telefono') }}">
                                                 </div>
                                             </div>
                                         </div>
 
-                                      <!--  <button type="submit" class="btn btn-info btn-fill pull-right">Actualizar Perfil</button>
-                                        <div class="clearfix"></div>-->
+                                        <button type="submit" class="btn btn-info btn-fill pull-right">Crear Administrador</button>
+                                        <div class="clearfix"></div>
                                     </form>
                                 </div>
                             </div>
