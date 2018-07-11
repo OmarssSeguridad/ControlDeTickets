@@ -11,5 +11,22 @@ class adminController extends Controller
     {
         return view('admin.AltaAdmin'); 
     }
+    public function store(Request $request)
+    {
+    	
 
+        $admin = new Admin;   
+
+        $admin->name = $request->name;
+        $admin->email = $request->email;
+        $admin->password = bcrypt($request->password);
+        $admin->departamento = $request->departamento;
+        $admin->cargo = $request->cargo;
+        $admin->telefono = $request->telefono;
+        $admin->direccion = $request->direccion;
+        $admin->sucursal = $request->sucursal; 
+        $admin->noEmpleado = $request->noEmpleado; 
+        $admin->save(); 
+        return redirect('/admin/dashboard');
+    }
 }
