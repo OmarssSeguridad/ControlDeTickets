@@ -13,75 +13,70 @@
                                         <div class="row">
                                             <div class="col-md-5 pr-1">
                                                 <div class="form-group">
-                                                    <label>Empresa </label>
+                                                    <label>Empresa</label>
                                                     <input type="text" class="form-control" disabled="" placeholder="Company" value="Hensa Distribuciones S.A. de C.V.">
                                                 </div>
                                             </div>
+
+
                                             <div class="col-md-3 px-1">
                                                 <div class="form-group">
                                                     <label>Nombre</label>
-                                                    <input type="text" class="form-control" placeholder="Username" value="michael23" >
+                                                    <input type="text" class="form-control" placeholder="Username" name="name" value="{{Auth::user()->name}}" >
                                                 </div>
                                             </div>
                                             <div class="col-md-4 pl-1">
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Email address</label>
-                                                    <input type="email" class="form-control" placeholder="Email">
+                                                    <label for="exampleInputEmail1">Correo Electronico</label>
+                                                    <input type="email" disabled="" class="form-control" placeholder="Email" name="correo" value="{{Auth::user()->email}}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 pr-1">
                                                 <div class="form-group">
-                                                    <label>First Name</label>
-                                                    <input type="text" class="form-control" placeholder="Company" value="Mike">
+                                                    <label>Departamento</label>
+                                                    <input type="text" class="form-control" placeholder="Departamento" name="departamento" value="{{Auth::user()->departamento}}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 pl-1">
                                                 <div class="form-group">
-                                                    <label>Last Name</label>
-                                                    <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                                                    <label>Cargo</label>
+                                                    <input type="text" class="form-control" placeholder="Cargo" name="cargo" value="{{Auth::user()->cargo}}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label>Address</label>
-                                                    <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                                                    <label>Direccion</label>
+                                                    <input type="text" class="form-control" placeholder="Direccion" name="direccion" value="{{Auth::user()->direccion}}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4 pr-1">
                                                 <div class="form-group">
-                                                    <label>City</label>
-                                                    <input type="text" class="form-control" placeholder="City" value="Mike">
+                                                    <label>Sucursal</label>
+                                                    <input type="text" class="form-control" placeholder="Sucursal" name="sucursal" value="{{Auth::user()->sucursal}}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 px-1">
                                                 <div class="form-group">
-                                                    <label>Country</label>
-                                                    <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                                                    <label>No. Empleado</label>
+                                                    <input type="number" disabled="" class="form-control" placeholder="0000" name="noEmpleado" value="{{Auth::user()->noEmpleado}}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 pl-1">
                                                 <div class="form-group">
-                                                    <label>Postal Code</label>
-                                                    <input type="number" class="form-control" placeholder="ZIP Code">
+                                                    <label>Telefono</label>
+                                                    <input type="number" class="form-control" placeholder="(000)0000000" name="telefono" value="{{Auth::user()->telefono}}">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>About Me</label>
-                                                    <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
-                                        <div class="clearfix"></div>
+
+                                      <!--  <button type="submit" class="btn btn-info btn-fill pull-right">Actualizar Perfil</button>
+                                        <div class="clearfix"></div>-->
                                     </form>
                                 </div>
                             </div>
@@ -95,29 +90,14 @@
                                     <div class="author">
                                         <a href="#">
                                             <img class="avatar border-gray" src="{{ asset('/img/faces/face-3.jpg') }}" alt="...">
-                                            <h5 class="title">Mike Andrew</h5>
+                                            <h5 class="title">{{Auth::user()->name}}</h5>
                                         </a>
-                                        <p class="description">
-                                            michael24
-                                        </p>
                                     </div>
                                     <p class="description text-center">
                                         "Lamborghini Mercy
                                         <br> Your chick she so thirsty
                                         <br> I'm in that two seat Lambo"
                                     </p>
-                                </div>
-                                <hr>
-                                <div class="button-container mr-auto ml-auto">
-                                    <button href="#" class="btn btn-simple btn-link btn-icon">
-                                        <i class="fa fa-facebook-square"></i>
-                                    </button>
-                                    <button href="#" class="btn btn-simple btn-link btn-icon">
-                                        <i class="fa fa-twitter"></i>
-                                    </button>
-                                    <button href="#" class="btn btn-simple btn-link btn-icon">
-                                        <i class="fa fa-google-plus-square"></i>
-                                    </button>
                                 </div>
                             </div>
                         </div>

@@ -1,12 +1,6 @@
 @extends('admin.layout.main')
 @section('content')
     
-            <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
-
 
             <div class="content">
                 <div class="container-fluid">

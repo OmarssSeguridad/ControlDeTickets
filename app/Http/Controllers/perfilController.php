@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use app\Admin;
+use DB;
 class perfilController extends Controller
 {
     public function perfilAdministrador()
@@ -16,7 +17,8 @@ class perfilController extends Controller
     {
 		//$admin = Admin::find(Auth::id());        
 
-       	return view('admin.administradores');
+        $admin = collect(DB::table('admins')->get());
+        return view('admin.administradores',compact('admin'));
     }
     public function mostrarUsuarios()
     {
@@ -30,4 +32,5 @@ class perfilController extends Controller
 
        	return view('admin.tickets');
     }
+
 }

@@ -16,7 +16,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email','cargo','telefono', 'password',
+        'name', 'email','departamento','cargo','telefono','direccion','sucursal','noEmpleado', 'password',
     ];
 
     /**
@@ -25,7 +25,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token','tipoUsuario',
+        'password', 'remember_token',
     ];
 
     /**
