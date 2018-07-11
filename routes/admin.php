@@ -8,16 +8,13 @@ Route::get('/dashboard', function () {
     //dd($users);
 
     return view('admin.dashboard');
-})->name('dashboard');
+})->name('home');
 //Altas de administrador
+//Route::get('/altaAdmin','adminController@create');  
+//Route::post('/altaAdmin', 'AdminAuth\RegisterController@create');
 
 Route::get('/altaAdmin', 'adminController@create')->name('register');
-Route::post('/altaAdmin', 'adminController@store');
-
-
-Route::get('/altaAdmin', 'usuarioController@create')->name('register');
-Route::post('/altaAdmin', 'usuarioController@store');
-
+Route::post('/altaAdmin', 'AdminAuth\RegisterController@register');
 
 Route::get('/perfil','perfilController@perfilAdministrador');
 Route::get('/administradores','perfilController@mostrarAdministradores');

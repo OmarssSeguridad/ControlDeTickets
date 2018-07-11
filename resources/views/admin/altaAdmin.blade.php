@@ -9,7 +9,7 @@
                                     <h4 class="card-title">Alta Administrador</h4>
                                 </div>
                                 <div class="card-body">
-                                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/altaAdmin') }}">
+                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/register') }}">
                                 {{ csrf_field() }}
                                         <div class="row">
                                             <div class="col-md-5 pr-1">
@@ -21,138 +21,90 @@
 
 
                                             <div class="col-md-3 px-1">
-                                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                                <div class="form-group">
                                                     <label>Nombre</label>
                                                     <input type="text" class="form-control" placeholder="Username" name="name" value="{{ old('name') }}" autofocus >
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-
                                                 </div>
                                             </div>
                                             <div class="col-md-4 pl-1">
-                                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                                    <label for="email">Correo Electronico</label>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Correo Electronico</label>
                                                     <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 pr-1">
-                                                <div class="form-group{{ $errors->has('departamento') ? ' has-error' : '' }}">
+                                                <div class="form-group">
                                                     <label>Departamento</label>
                                                     <input type="text" class="form-control" placeholder="Departamento" name="departamento" value="{{ old('departamento') }}">
-                                @if ($errors->has('departamento'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('departamento') }}</strong>
-                                    </span>
-                                @endif
                                                 </div>
                                             </div>
                                             <div class="col-md-6 pl-1">
-                                                <div class="form-group{{ $errors->has('departamento') ? ' has-error' : '' }}">
+                                                <div class="form-group">
                                                     <label>Cargo</label>
                                                     <input type="text" class="form-control" placeholder="Cargo" name="cargo" value="{{ old('cargo') }}">
-                                @if ($errors->has('cargo'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('cargo') }}</strong>
-                                    </span>
-                                @endif
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <div class="form-group{{ $errors->has('direccion') ? ' has-error' : '' }}">
+                                                <div class="form-group">
                                                     <label>Direccion</label>
                                                     <input type="text" class="form-control" placeholder="Direccion" name="direccion" value="{{ old('direccion') }}">
-                                @if ($errors->has('direccion'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('direccion') }}</strong>
-                                    </span>
-                                @endif
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4 pr-1">
-                                                <div class="form-group{{ $errors->has('sucursal') ? ' has-error' : '' }}">
+                                                <div class="form-group">
                                                     <label>Sucursal</label>
                                                     <input type="text" class="form-control" placeholder="Sucursal" name="sucursal" value="{{ old('sucursal') }}">
-                                @if ($errors->has('sucursal'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('sucursal') }}</strong>
-                                    </span>
-                                @endif
                                                 </div>
                                             </div>
                                             <div class="col-md-4 px-1">
-                                                <div class="form-group{{ $errors->has('noEmpleado') ? ' has-error' : '' }}">
+                                                <div class="form-group">
                                                     <label>No. Empleado</label>
                                                     <input type="number" class="form-control" placeholder="0000" name="noEmpleado" value="{{ old('noEmpleado') }}">
-                               @if ($errors->has('noEmpleado'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('noEmpleado') }}</strong>
-                                    </span>
-                                @endif
                                                 </div>
                                             </div>
                                             <div class="col-md-4 pl-1">
-                                                <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }}">
+                                                <div class="form-group">
                                                     <label>Telefono</label>
                                                     <input type="number" class="form-control" placeholder="(000)0000000" name="telefono" value="{{ old('telefono') }}">
-
-                                @if ($errors->has('telefono'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('telefono') }}</strong>
-                                    </span>
-                                @endif
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 pl-1">
-                                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                                    <label>Password</label>
-                                                    <input type="password" class="form-control" name="password" value="{{ old('password') }}">
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 pl-1">
-                                                <div id="password-confirmation" class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                                    <label>Confirmar Password</label>
-                                                    <input id="password-confirmation" type="password" class="form-control" name="password_confirmation" value="{{ old('password') }}">
-
-                                                    @if ($errors->has('password_confirmation'))
-                                                        <span class="help-block">
-                                                            <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                                        </span>
-                                                    @endif
-                                                </div>
-                                            </div>
-
                                         </div>
+
                                         <button type="submit" class="btn btn-info btn-fill pull-right">Crear Administrador</button>
+                                        <div class="clearfix"></div>
                                     </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-user">
+                                <div class="card-image">
+                                    <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <div class="author">
+                                        <a href="#">
+                                            <img class="avatar border-gray" src="{{ asset('/img/faces/face-3.jpg') }}" alt="...">
+                                            <h5 class="title">{{Auth::user()->name}}</h5>
+                                        </a>
+                                    </div>
+                                    <p class="description text-center">
+                                        "Lamborghini Mercy
+                                        <br> Your chick she so thirsty
+                                        <br> I'm in that two seat Lambo"
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
             <footer class="footer">
                 <div class="container">
                     <nav>
