@@ -23,3 +23,5 @@ Route::get('/perfil','perfilController@perfilAdministrador');
 Route::get('/administradores','perfilController@mostrarAdministradores');
 Route::get('/usuarios','perfilController@mostrarUsuarios');
 Route::get('/tickets','perfilController@mostrarTickets');
+
+Route::get('/altaTicket','ticketsController@create');
