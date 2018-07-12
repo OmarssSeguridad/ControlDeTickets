@@ -9,7 +9,7 @@
                                     <h4 class="card-title">Alta Administrador</h4>
                                 </div>
                                 <div class="card-body">
-                                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/altaAdmin') }}">
+                                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/altaUsuario') }}">
                                 {{ csrf_field() }}
                                         <div class="row">
                                             <div class="col-md-5 pr-1">

@@ -47,6 +47,10 @@ class Admin extends Authenticatable
     {
         return $this->belongsTo(Cargo::class);
     }
+        public function departamento()
+    {
+        return $this->belongsTo(Departamento::class);
+    }
 
     public function tickets()
     {

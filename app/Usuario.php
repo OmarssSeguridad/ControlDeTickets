@@ -16,7 +16,7 @@ class Usuario extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email','cargo','telefono', 'password',
+        'name', 'email','departamento','cargo','telefono','direccion','sucursal','noEmpleado', 'password',
     ];
 
     /**
@@ -46,6 +46,10 @@ class Usuario extends Authenticatable
     public function cargo()
     {
         return $this->belongsTo(Cargo::class);
+    }
+    public function departamento()
+    {
+        return $this->belongsTo(Departamento::class);
     }
 
     public function tickets()
