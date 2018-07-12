@@ -94,9 +94,13 @@
                                         </a>
                                     </div>
                                     <p class="description text-center">
-                                        "Lamborghini Mercy
-                                        <br> Your chick she so thirsty
-                                        <br> I'm in that two seat Lambo"
+                                        <br> {{Auth::user()->email}}
+                                        <br> {{Auth::user()->departamento}}
+                                        <br> {{Auth::user()->cargo}}
+                                        <br> {{Auth::user()->sucursal}}
+                                        <br> {{Auth::user()->noEmpleado}}
+                                        <br> {{Auth::user()->departamento}}
+                                        <br> {{Auth::user()->telefono}}
                                     </p>
                                 </div>
                             </div>

@@ -58,9 +58,21 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./icons.html">
+                        <a class="nav-link" href="{{ url('/admin/altaSucursal') }}">
                             <i class="nc-icon nc-pin-3"></i>
                             <p>Alta Sucursal</p>
+                        </a>
+                    </li>
+                     <li>
+                        <a class="nav-link" href="{{ url('/admin/altaDepartamento') }}">
+                            <i class="nc-icon nc-bag"></i>
+                            <p>Alta Departamento</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ url('/admin/altaCargo') }}">
+                            <i class="nc-icon nc-badge"></i>
+                            <p>Alta Cargo</p>
                         </a>
                     </li>
                     <li>
@@ -85,6 +97,12 @@
                         <a class="nav-link" href="{{ url('/admin/tickets') }}">
                             <i class="nc-icon nc-notes"></i>
                             <p>Tickets</p>
+                        </a>
+                    </li>
+                     <li>
+                        <a class="nav-link" href="{{ url('/admin/sucursales') }}">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Sucursales</p>
                         </a>
                     </li>
                 </ul>

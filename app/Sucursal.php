@@ -5,8 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Sucursal extends Model
-{
-	
+{	
    	public function usuario()
     {
         return $this->hasMany(Usuario::class);
