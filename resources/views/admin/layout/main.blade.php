@@ -76,7 +76,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./maps.html">
+                        <a class="nav-link" href="{{ url('/admin/altaTicket') }}">
                             <i class="nc-icon nc-atom"></i>
                             <p>Alta Ticket</p>
                         </a>
