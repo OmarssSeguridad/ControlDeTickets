@@ -26,12 +26,13 @@ Route::post('/altaCargo', 'cargoController@store');
 Route::get('/altaDepartamento', 'departamentoController@create')->name('register');
 Route::post('/altaDepartamento', 'departamentoController@store');
 
+Route::get('/altaTicket', 'ticketsController@create')->name('register');
+Route::post('/altaTicket', 'ticketsController@store');
+
 
 Route::get('/perfil','perfilController@perfilAdministrador');
 Route::get('/administradores','perfilController@mostrarAdministradores');
 Route::get('/usuarios','perfilController@mostrarUsuarios');
 Route::get('/tickets','perfilController@mostrarTickets');
-//AltaUsuario
 Route::get('/sucursales','perfilController@mostrarSucursales');
-Route::get('/altaTicket','ticketsController@create');
 

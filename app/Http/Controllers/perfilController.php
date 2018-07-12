@@ -26,9 +26,8 @@ class perfilController extends Controller
 
     public function mostrarTickets()
     {
-		//$admin = Admin::find(Auth::id());        
-
-       	return view('admin.tickets');
+        $ticket = collect(DB::table('tickets')->get());
+        return view('admin.tickets',compact('ticket'));
     }
     public function mostrarSucursales()
     {
