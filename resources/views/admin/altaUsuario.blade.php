@@ -8,6 +8,7 @@
                                 <div class="card-header">
                                     <h4 class="card-title">Registrar Usuario</h4>
                                 </div>
+
                                 <div class="card-body">
                                  <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/altaUsuario') }}">
                                 {{ csrf_field() }}
@@ -25,7 +26,7 @@
                                                     <label>Nombre</label>
                                                     <input type="text" class="form-control" placeholder="Username" name="name" value="{{ old('name') }}" autofocus >
                                 @if ($errors->has('name'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
@@ -37,7 +38,7 @@
                                                     <label for="email">Correo Electronico</label>
                                                     <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
                                 @if ($errors->has('email'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
@@ -51,7 +52,7 @@
                                                     <label>Departamento</label>
                                                     <input type="text" class="form-control" placeholder="Departamento" name="departamento" value="{{ old('departamento') }}">
                                 @if ($errors->has('departamento'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('departamento') }}</strong>
                                     </span>
                                 @endif
@@ -62,7 +63,7 @@
                                                     <label>Cargo</label>
                                                     <input type="text" class="form-control" placeholder="Cargo" name="cargo" value="{{ old('cargo') }}">
                                 @if ($errors->has('cargo'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('cargo') }}</strong>
                                     </span>
                                 @endif
@@ -75,7 +76,7 @@
                                                     <label>Direccion</label>
                                                     <input type="text" class="form-control" placeholder="Direccion" name="direccion" value="{{ old('direccion') }}">
                                 @if ($errors->has('direccion'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('direccion') }}</strong>
                                     </span>
                                 @endif
@@ -88,7 +89,7 @@
                                                     <label>Sucursal</label>
                                                     <input type="text" class="form-control" placeholder="Sucursal" name="sucursal" value="{{ old('sucursal') }}">
                                 @if ($errors->has('sucursal'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('sucursal') }}</strong>
                                     </span>
                                 @endif
@@ -99,7 +100,7 @@
                                                     <label>No. Empleado</label>
                                                     <input type="number" class="form-control" placeholder="0000" name="noEmpleado" value="{{ old('noEmpleado') }}">
                                @if ($errors->has('noEmpleado'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('noEmpleado') }}</strong>
                                     </span>
                                 @endif
@@ -111,7 +112,7 @@
                                                     <input type="number" class="form-control" placeholder="(000)0000000" name="telefono" value="{{ old('telefono') }}">
 
                                 @if ($errors->has('telefono'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('telefono') }}</strong>
                                     </span>
                                 @endif
@@ -123,7 +124,7 @@
                                                     <input type="password" class="form-control" name="password" value="{{ old('password') }}">
 
                                 @if ($errors->has('password'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
@@ -135,7 +136,7 @@
                                                     <input id="password-confirmation" type="password" class="form-control" name="password_confirmation" value="{{ old('password') }}">
 
                                                     @if ($errors->has('password_confirmation'))
-                                                        <span class="help-block">
+                                                        <span class="alert alert-danger">
                                                             <strong>{{ $errors->first('password_confirmation') }}</strong>
                                                         </span>
                                                     @endif

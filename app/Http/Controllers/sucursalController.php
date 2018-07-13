@@ -20,6 +20,11 @@ class sucursalController extends Controller
         $sucursal->name = $request->name;
         $sucursal->direccion = $request->direccion;
         $sucursal->telefono = $request->telefono;
+        $this->validate($request, [
+        'name'=>'required',
+        'direccion'=>'required',
+        'telefono'=>'required',
+        ]);
         $sucursal->save(); 
         return redirect('/admin/dashboard');
     }

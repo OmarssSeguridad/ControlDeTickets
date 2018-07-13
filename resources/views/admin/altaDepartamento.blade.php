@@ -8,6 +8,8 @@
                                 <div class="card-header">
                                     <h4 class="card-title">Registrar Departamento</h4>
                                 </div>
+
+                                
                                 <div class="card-body">
                                  <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/altaDepartamento') }}">
                                 {{ csrf_field() }}
@@ -25,7 +27,7 @@
                                                     <label>Departamento</label>
                                                     <input type="text" class="form-control" placeholder="Sistemas" name="name" value="{{ old('name') }}" autofocus >
                                 @if ($errors->has('name'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif

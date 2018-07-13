@@ -27,6 +27,20 @@ class usuarioController extends Controller
         $usuario->direccion = $request->direccion;
         $usuario->sucursal = $request->sucursal; 
         $usuario->noEmpleado = $request->noEmpleado; 
+
+        $this->validate($request, [
+        'name'=>'required',
+        'email'=>'required',
+        'password'=>'required',
+        'departamento'=>'required',
+        'cargo'=>'required',
+         'telefono'=>'required',
+        'direccion'=>'required',
+        'sucursal'=>'required',
+        'noEmpleado'=>'required',
+
+        ]);
+
         $usuario->save(); 
         return redirect('/admin/dashboard');
     }
