@@ -7,6 +7,21 @@ use app\Admin;
 
 class adminController extends Controller
 {
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:admins',
+            'password' => 'required|min:6|confirmed',
+            'departamento' => 'required',
+            'cargo' => 'required',
+            'telefono' => 'required',
+            'direccion' => 'required',
+            'sucursal' => 'required',
+            'noEmpleado' => 'required',
+        ]);
+    }
+    
     public function create()
     {
         return view('admin.AltaAdmin'); 
