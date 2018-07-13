@@ -20,7 +20,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-image="{{ asset('img/sidebar-5.jpg') }}">
+        <div class="sidebar" data-color="blue" data-image="{{ asset('img/sidebar-1.jpg') }}">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -48,37 +48,37 @@
                     <li>
                         <a class="nav-link" href="{{ url('/admin/altaAdmin') }}">
                             <i class="nc-icon nc-paper-2"></i>
-                            <p>Alta Administrador</p>
+                            <p>Crear Admin</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="{{ url('/admin/altaUsuario') }}">
                             <i class="nc-icon nc-paper-2"></i>
-                            <p>Alta Usuario</p>
+                            <p>Crear Usuario</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="{{ url('/admin/altaSucursal') }}">
                             <i class="nc-icon nc-pin-3"></i>
-                            <p>Alta Sucursal</p>
+                            <p>Crear Sucursal</p>
                         </a>
                     </li>
                      <li>
                         <a class="nav-link" href="{{ url('/admin/altaDepartamento') }}">
                             <i class="nc-icon nc-bag"></i>
-                            <p>Alta Departamento</p>
+                            <p>Crear Depto</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="{{ url('/admin/altaCargo') }}">
                             <i class="nc-icon nc-badge"></i>
-                            <p>Alta Cargo</p>
+                            <p>Crear Cargo</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="{{ url('/admin/altaTicket') }}">
                             <i class="nc-icon nc-atom"></i>
-                            <p>Alta Ticket</p>
+                            <p>Crear Ticket</p>
                         </a>
                     </li>
                     <li>
@@ -109,68 +109,7 @@
             </div>
         </div>
     <!--   -->
-    <div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-        <a href="#" data-toggle="dropdown">
-            <i class="fa fa-cog fa-2x"> </i>
-        </a>
-        <ul class="dropdown-menu">
-            <li class="header-title"> Estilos de Barra</li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Imagen de fondo</p>
-                    <label class="switch">
-                        <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary" data-off-color="primary"><span class="toggle"></span>
-                    </label>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger background-color">
-                    <p>Colores</p>
-                    <div class="pull-right">
-                        <span class="badge filter badge-black" data-color="black"></span>
-                        <span class="badge filter badge-azure" data-color="azure"></span>
-                        <span class="badge filter badge-green" data-color="green"></span>
-                        <span class="badge filter badge-orange" data-color="orange"></span>
-                        <span class="badge filter badge-red" data-color="red"></span>
-                        <span class="badge filter badge-purple active" data-color="purple"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="header-title">Imágenes de la barra lateral</li>
-
-            <li class="active">
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="{{ asset('/img/sidebar-1.jpg') }}" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="{{ asset('/img/sidebar-3.jpg') }}" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="{{ asset('/img/sidebar-4.jpg') }}" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="{{ asset('/img/sidebar-5.jpg') }}" alt="" />
-                </a>
-            </li>
-
-            <li class="button-container">
-                <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
-                <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i class="fa fa-facebook-square"></i> · 426</button>
-            </li>
-        </ul>
-    </div>
-</div>
-
-
+  
 
         <div class="main-panel">
             <!-- Navbar -->
@@ -250,16 +189,12 @@
 <script src="{{ asset('js/plugins/bootstrap-notify.js') }}"></script>
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="{{ asset('js/light-bootstrap-dashboard.js?v=2.0.1') }}" type="text/javascript"></script>
-<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
-<script src="{{ asset('js/demo.js') }}"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
 
-        demo.showNotification();
+            <div class="content">
+                <div class="container-fluid">
+                    @yield('content2')
+                </div>
+            </div>
 
-    });
-</script>
 
 </html>

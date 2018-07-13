@@ -3,10 +3,10 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Alta Administrador</h4>
+                                    <h4 class="card-title">Registar Administrador</h4>
                                 </div>
                                 <div class="card-body">
                                  <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/altaUsuario') }}">
@@ -25,7 +25,7 @@
                                                     <label>Nombre</label>
                                                     <input type="text" class="form-control" placeholder="Username" name="name" value="{{ old('name') }}" autofocus >
                                 @if ($errors->has('name'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif

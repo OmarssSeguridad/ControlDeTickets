@@ -1,5 +1,13 @@
 @extends('admin.layout.main')
 @section('content')
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Registrar Ticket</h4>
+
 <div class="content">
     <div class="container-fluid">
         <div class="row">
@@ -43,6 +51,7 @@
                                 <div class="form-group">
                                     <label>Usuario</label>
                                     <input type="text" class="form-control" disabled="" placeholder="name" name="name" value="{{Auth::user()->name}}" >
+
                                 </div>
                             </div>
 

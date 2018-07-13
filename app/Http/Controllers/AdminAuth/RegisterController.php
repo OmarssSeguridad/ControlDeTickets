@@ -52,6 +52,12 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:admins',
             'password' => 'required|min:6|confirmed',
+            'departamento' => 'required',
+            'cargo' => 'required',
+            'telefono' => 'required',
+            'direccion' => 'required',
+            'sucursal' => 'required',
+            'noEmpleado' => 'required',
         ]);
     }
 
