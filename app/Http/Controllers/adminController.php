@@ -7,20 +7,6 @@ use app\Admin;
 
 class adminController extends Controller
 {
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:admins',
-            'password' => 'required|min:6|confirmed',
-            'departamento' => 'required',
-            'cargo' => 'required',
-            'telefono' => 'required',
-            'direccion' => 'required',
-            'sucursal' => 'required',
-            'noEmpleado' => 'required',
-        ]);
-    }
     
     public function create()
     {
@@ -41,6 +27,19 @@ class adminController extends Controller
         $admin->direccion = $request->direccion;
         $admin->sucursal = $request->sucursal; 
         $admin->noEmpleado = $request->noEmpleado; 
+
+        $this->validate($request, [
+        'name'=>'required',
+        'email'=>'required',
+        'password'=>'required',
+        'departamento'=>'required',
+        'cargo'=>'required',
+        'telefono'=>'required',
+        'direccion'=>'required',
+        'sucursal'=>'required',
+        'noEmpleado'=>'required',
+
+    ]);
         $admin->save(); 
         return redirect('/admin/dashboard');
     }

@@ -27,7 +27,7 @@ public function store(Request $request)
     $this->validate($request, [
         'asunto'=>'required',
         'detalle'=>'required',
-        'evidencia'=>'required',
+
     ]);
 
      $tickets->save(); 

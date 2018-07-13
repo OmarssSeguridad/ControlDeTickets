@@ -14,6 +14,9 @@ public function create()
     {
         $cargo = new Cargo;   
         $cargo->name = $request->name;
+        $this->validate($request, [
+        'name'=>'required',
+    ]);
         $cargo->save(); 
         return redirect('/admin/dashboard');
     }

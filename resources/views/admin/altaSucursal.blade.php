@@ -8,6 +8,8 @@
                                 <div class="card-header">
                                     <h4 class="card-title">Registrar Sucursal</h4>
                                 </div>
+
+
                                 <div class="card-body">
                                  <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/altaSucursal') }}">
                                 {{ csrf_field() }}
@@ -20,19 +22,18 @@
                                             </div>
 
 
-                                            <div class="col-md-6 px-6">
-                                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                                    <label>Sucursal</label>
-                                                    <input type="text" class="form-control" placeholder="Play-Motors" name="name" value="{{ old('name') }}" autofocus >
+                                        <div class="col-md-6 px-6">
+                                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                                    <label>Nombre</label>
+                                                    <input type="text" class="form-control" placeholder="Username" name="name" value="{{ old('name') }}" autofocus >
                                 @if ($errors->has('name'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
 
                                                 </div>
                                             </div>
-
                                         </div>
 
 
@@ -42,20 +43,21 @@
                                                     <label>Direccion</label>
                                                     <input type="text" class="form-control" placeholder="Direccion" name="direccion" value="{{ old('direccion') }}">
                                 @if ($errors->has('direccion'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('direccion') }}</strong>
                                     </span>
                                 @endif
                                                 </div>
                                             </div>
                                         </div>
+
                                             <div class="col-md-4 pl-1">
                                                 <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }}">
                                                     <label>Telefono</label>
                                                     <input type="number" class="form-control" placeholder="(000)0000000" name="telefono" value="{{ old('telefono') }}">
 
                                 @if ($errors->has('telefono'))
-                                    <span class="help-block">
+                                    <span class="alert alert-danger">
                                         <strong>{{ $errors->first('telefono') }}</strong>
                                     </span>
                                 @endif

@@ -17,6 +17,9 @@ class departamentoController extends Controller
 
         $departamento = new Departamento;   
         $departamento->name = $request->name;
+        $this->validate($request, [
+        'name'=>'required',
+        ]);
         $departamento->save(); 
         return redirect('/admin/dashboard');
     }

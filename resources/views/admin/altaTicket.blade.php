@@ -7,30 +7,18 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title">Registrar Ticket</h4>
-
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Alta ticket</h4>
                     </div>
 
 
                     @if($errors-> any())
-
                     <div class="alert alert-danger">
                         <h6>Por favor corrige los errores debajo:</h6>
                         <ul>
                             @foreach($errors->all() as $error)
                             <li>{{$error}}</li>
                             @endforeach
-
                         </ul>
-
                     </div>
-
                     @endif
 
 
@@ -50,7 +38,7 @@
                             <div class="col-md-5 px-1">
                                 <div class="form-group">
                                     <label>Usuario</label>
-                                    <input type="text" class="form-control" disabled="" placeholder="name" name="name" value="{{Auth::user()->name}}" >
+                                    <input type="text" class="form-control" readonly=""  placeholder="name" name="name" value="{{Auth::user()->name}}" >
 
                                 </div>
                             </div>
@@ -58,7 +46,7 @@
                             <div class="col-md-4 pl-1">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Sucursal</label>
-                                    <input type="text" class="form-control" disabled="" placeholder="sucursal" name="sucursal" value="{{Auth::user()->sucursal}}">
+                                    <input type="text" class="form-control" readonly="" placeholder="sucursal" name="sucursal" value="{{Auth::user()->sucursal}}">
                                 </div>
                             </div>
                         </div>
@@ -85,10 +73,10 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3 pl-1">
+                        <div class="col-md-3 pl-1 ">
                             <div class="form-group">
                                 <label>Status</label>
-                                <input type="text"  id="Status"  disabled=""  value="Pendiente" name="status" class="form-control">
+                                <input type="text"  id="Status"  readonly=""  value="Pendiente" name="status" class="form-control ">
                             </div>
                         </div>
 
