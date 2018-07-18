@@ -22,6 +22,7 @@
                                             <th>Correo</th>
                                             <th>Sucursal</th>
                                             <th>No. Empleado</th>
+                                            <th>Accion</th>
                                         </thead>
                                         @foreach ($usuario as $usuario) 
                                         <tbody>
@@ -35,6 +36,19 @@
                                                 <td>{{ $usuario->email }}</td>
                                                 <td>{{ $usuario->sucursal }}</td>
                                                 <td>{{ $usuario->noEmpleado }}</td>
+                                                <td> 
+                                                <form action="" method="post">
+                                                    {{ csrf_field() }}
+                                                    <!--{{ method_field('PUT') }}-->
+                                                    <button type="submit"><i class="fa fa-edit"></i></button>
+                                                </form>
+                                                <form action="{{'/admin/bajaUsuario/'.$usuario->id}}" method="post"> 
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+
+                                                    <button type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+                                                </form> 
+                                            </td>
                                             </tr>
                                             
                                         </tbody>

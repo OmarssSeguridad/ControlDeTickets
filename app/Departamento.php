@@ -12,6 +12,6 @@ class Departamento extends Model
     }
         public function usuario()
     {
-        return $this->hasMany(uUsuario::class);
+        return $this->hasMany(Usuario::class);
     }
 }

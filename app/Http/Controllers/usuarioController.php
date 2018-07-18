@@ -44,4 +44,13 @@ class usuarioController extends Controller
         $usuario->save(); 
         return redirect('/admin/dashboard');
     }
+    public function destroy($id)
+    {
+        $admin= Usuario::find($id);
+        $admin->delete();
+        session()->flash('message','Eliminado Correctamente');
+        return redirect('admin/usuarios');
+
+        return $id;
+    }
 }

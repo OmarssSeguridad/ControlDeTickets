@@ -9,7 +9,7 @@
                                     <h4 class="card-title">Registar Administrador</h4>
                                 </div>
                                 <div class="card-body">
-                                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/altaUsuario') }}">
+                                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/altaAdmin') }}">
                                 {{ csrf_field() }}
                                         <div class="row">
                                             <div class="col-md-5 pr-1">
@@ -48,8 +48,12 @@
                                         <div class="row">
                                             <div class="col-md-6 pr-1">
                                                 <div class="form-group{{ $errors->has('departamento') ? ' has-error' : '' }}">
-                                                    <label>Departamento</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento" name="departamento" value="{{ old('departamento') }}">
+                                                <label>Departamento</label>
+                                                <select name="departamento" class="form-control" placeholder="Seleciona">
+                                                    @foreach($departamento as $departamento)
+                                                    <option>{{$departamento->name}}</option>
+                                                    @endforeach
+                                                </select>
                                 @if ($errors->has('departamento'))
                                     <span class="alert alert-danger">
                                         <strong>{{ $errors->first('departamento') }}</strong>
@@ -58,9 +62,14 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6 pl-1">
-                                                <div class="form-group{{ $errors->has('departamento') ? ' has-error' : '' }}">
-                                                    <label>Cargo</label>
-                                                    <input type="text" class="form-control" placeholder="Cargo" name="cargo" value="{{ old('cargo') }}">
+                                                <div class="form-group{{ $errors->has('cargo') ? ' has-error' : '' }}">
+                                                <label>Cargo</label>
+                                                <select name="cargo" class="form-control" placeholder="Seleciona">
+                                                    @foreach($cargo as $cargo)
+                                                    <option>{{$cargo->name}}</option>
+                                                    @endforeach
+                                                </select>
+
                                 @if ($errors->has('cargo'))
                                     <span class="alert alert-danger">
                                         <strong>{{ $errors->first('cargo') }}</strong>
@@ -85,13 +94,17 @@
                                         <div class="row">
                                             <div class="col-md-4 pr-1">
                                                 <div class="form-group{{ $errors->has('sucursal') ? ' has-error' : '' }}">
-                                                    <label>Sucursal</label>
-                                                    <input type="text" class="form-control" placeholder="Sucursal" name="sucursal" value="{{ old('sucursal') }}">
-                                @if ($errors->has('sucursal'))
-                                    <span class="alert alert-danger">
-                                        <strong>{{ $errors->first('sucursal') }}</strong>
-                                    </span>
-                                @endif
+                                                <label>Sucursal</label>
+                                                <select name="sucursal" class="form-control" placeholder="Seleciona">
+                                                    @foreach($sucursal as $sucursal)
+                                                    <option>{{$sucursal->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                                @if ($errors->has('sucursal'))
+                                                    <span class="alert alert-danger">
+                                                        <strong>{{ $errors->first('sucursal') }}</strong>
+                                                    </span>
+                                                @endif
                                                 </div>
                                             </div>
                                             <div class="col-md-4 px-1">
@@ -141,6 +154,8 @@
                                                     @endif
                                                 </div>
                                             </div>
+
+
 
                                         </div>
                                         <button type="submit" class="btn btn-info btn-fill pull-right">Crear Administrador</button>

@@ -34,4 +34,18 @@ public function store(Request $request)
 
     return redirect('/admin/dashboard');
 }
+    public function destroy($id)
+    {
+        $admin= Tickets::find($id);
+        $admin->delete();
+        session()->flash('message','Eliminado Correctamente');
+        return redirect('admin/tickets');
+
+        return $id;
+    }
+    public function combo()
+    {
+        $cargo = Status::all();
+        return view('admin.tickets', compact('status'));
+    }
 }

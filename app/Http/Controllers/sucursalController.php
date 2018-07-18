@@ -28,4 +28,13 @@ class sucursalController extends Controller
         $sucursal->save(); 
         return redirect('/admin/dashboard');
     }
+    public function destroy($id)
+    {
+        $admin= Sucursal::find($id);
+        $admin->delete();
+        session()->flash('message','Eliminado Correctamente');
+        return redirect('admin/sucursales');
+
+        return $id;
+    }
 }

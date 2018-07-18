@@ -2,209 +2,179 @@
 @section('content')
     
 
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Email Statistics</h4>
-                                    <p class="card-category">Last Campaign Performance</p>
-                                </div>
-                                <div class="card-body ">
-                                    <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
-                                </div>
-                                <div class="card-footer ">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Open
-                                        <i class="fa fa-circle text-danger"></i> Bounce
-                                        <i class="fa fa-circle text-warning"></i> Unsubscribe
+            
+
+<!--
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                            <i class="fa fa-user-circle"></i>
+                                        </div>
                                     </div>
-                                    <hr>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Miembros</p>
+                                            {{ $contadorDeAdmins }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
                                     <div class="stats">
-                                        <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
+                                         Actualizado por última ocasión {{ $actualizacionAdmins }}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-8">
-                            <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Users Behavior</h4>
-                                    <p class="card-category">24 Hours performance</p>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-success text-center">
+                                            <i class="fa fa-money"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Ingresos</p>
+                                            $1,345
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-body ">
-                                    <div id="chartHours" class="ct-chart"></div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-calendar"></i> Actualizado 
+                                    </div>
                                 </div>
-                                <div class="card-footer ">
-                                    <div class="legend">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-danger text-center">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Egresos </p>
+                                            $23242
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-timer"></i> Actualizado ahora
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-info text-center">
+                                            <i class="fas fa-male"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Empleados</p>
+                                            {{ $contadorUsuarios }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        Actualizado por última ocasión
+                                        {{ $actualizacionUsuarios }}   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Users Behavior</h4>
+                                <p class="category">24 Hours performance</p>
+                            </div>
+                            <div class="content">
+                                <div id="chartHours" class="ct-chart"></div>
+                                <div class="footer">
+                                    <div class="chart-legend">
                                         <i class="fa fa-circle text-info"></i> Open
                                         <i class="fa fa-circle text-danger"></i> Click
                                         <i class="fa fa-circle text-warning"></i> Click Second Time
                                     </div>
                                     <hr>
                                     <div class="stats">
-                                        <i class="fa fa-history"></i> Updated 3 minutes ago
+                                        <i class="ti-reload"></i> Updated 3 minutes ago
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">2017 Sales</h4>
-                                    <p class="card-category">All products including Taxes</p>
-                                </div>
-                                <div class="card-body ">
-                                    <div id="chartActivity" class="ct-chart"></div>
-                                </div>
-                                <div class="card-footer ">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Tesla Model S
-                                        <i class="fa fa-circle text-danger"></i> BMW 5 Series
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                         <div class="card">
+                            <div class="header">
+                                <h4 class="title">Email Statistics</h4>
+                                <p class="category">Last Campaign Performance</p>
+                            </div>
+                            <div class="content">
+                                <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
+
+                                <div class="footer">
+                                    <div class="chart-legend">
+                                        <i class="fa fa-circle text-info"></i> Open
+                                        <i class="fa fa-circle text-danger"></i> Bounce
+                                        <i class="fa fa-circle text-warning"></i> Unsubscribe
                                     </div>
                                     <hr>
                                     <div class="stats">
-                                        <i class="fa fa-check"></i> Data information certified
+                                        <i class="ti-timer"></i> Campaign sent 2 days ago
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="card  card-tasks">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Tasks</h4>
-                                    <p class="card-category">Backend development</p>
-                                </div>
-                                <div class="card-body ">
-                                    <div class="table-full-width">
-                                        <table class="table">
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="">
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="" checked>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="" checked>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                                                    </td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" checked>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="">
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Read "Following makes Medium better"</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="" disabled>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>Unfollow 5 enemies from twitter</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card ">
+                            <div class="header">
+                                <h4 class="title">2015 Sales</h4>
+                                <p class="category">All products including Taxes</p>
+                            </div>
+                            <div class="content">
+                                <div id="chartActivity" class="ct-chart"></div>
+
+                                <div class="footer">
+                                    <div class="chart-legend">
+                                        <i class="fa fa-circle text-info"></i> Tesla Model S
+                                        <i class="fa fa-circle text-warning"></i> BMW 5 Series
                                     </div>
-                                </div>
-                                <div class="card-footer ">
                                     <hr>
                                     <div class="stats">
-                                        <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
+                                        <i class="ti-check"></i> Data information certified
                                     </div>
                                 </div>
                             </div>
@@ -212,6 +182,7 @@
                     </div>
                 </div>
             </div>
+        -->
             <footer class="footer">
                 <div class="container">
                     <nav>
@@ -247,8 +218,7 @@
                     </nav>
                 </div>
             </footer>
-        </div>
-    </div>
+
 @endsection
 @section('content2')
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
