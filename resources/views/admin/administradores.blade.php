@@ -22,6 +22,7 @@
                                             <th>Correo</th>
                                             <th>Sucursal</th>
                                             <th>No. Empleado</th>
+                                            <th>Accion</th>
                                         </thead>
                                         @foreach ($admin as $admin) 
                                         <tbody>
@@ -35,6 +36,20 @@
                                                 <td>{{ $admin->email }}</td>
                                                 <td>{{ $admin->sucursal }}</td>
                                                 <td>{{ $admin->noEmpleado }}</td>
+                                                <td> 
+                                                <form action="{{'/admin/editaAdmin/'.$admin->id}}" method="put">
+                                                    {{ csrf_field() }}
+
+                                                    <button type="submit"><i class="fa fa-edit"></i></button>
+                                                </form>
+                                                <!--<form href="{{ action('adminController@destroy',$admin->id)}}" method="post">-->
+                                                <form action="{{'/admin/bajaAdmin/'.$admin->id}}" method="post"> 
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+
+                                                    <button type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+                                                </form> 
+                                            </td>
                                             </tr>
                                             
                                         </tbody>

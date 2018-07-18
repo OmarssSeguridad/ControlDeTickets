@@ -20,6 +20,7 @@
                                             <th>Detalle</th>
                                             <th>Status</th>
                                             <th>Evidencia</th>
+                                            <th>Accion</th>
                                         </thead>
                                         @foreach ($ticket as $ticket) 
                                         <tbody>
@@ -29,8 +30,36 @@
                                                 <td>{{ $ticket->sucursal }}</td>
                                                 <td>{{ $ticket->asunto }}</td>
                                                 <td>{{ $ticket->detalle }}</td>
-                                                <td>{{ $ticket->status }}</td>
-                                                <td>{{ $ticket->evidencia }}</td>    </tr>
+                                                <td>
+                                                <form method="POST" action="">
+                                                    <div class="btn-group">  
+                                                    <div class="col-md-9">                      
+                                                     <select name="status" class="form-control"> 
+                                                        @foreach($status as $status)
+                                                        <option>{{$status->name}}</option>
+                                                        @endforeach                                    
+                                                    </select> 
+                                                  </div>
+                                                  </div>
+                                                </form>
+
+                                                </td>
+                                                <td>{{ $ticket->evidencia }}</td>    
+                                                <td> 
+                                                <form action="" method="post">
+                                                    {{ csrf_field() }}
+                                                    <!--{{ method_field('PUT') }}-->
+                                                    <button type="submit"><i class="fa fa-edit"></i></button>
+                                                </form>
+                                               
+                                                <form action="{{'/admin/bajaTicket/'.$ticket->id}}" method="post"> 
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+
+                                                    <button type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+                                                </form> 
+                                                </td>
+                                            </tr>
                                         </tbody>
                                         @endforeach
                                     </table>

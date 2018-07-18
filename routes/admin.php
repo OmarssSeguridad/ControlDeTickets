@@ -29,6 +29,30 @@ Route::post('/altaDepartamento', 'departamentoController@store');
 Route::get('/altaTicket', 'ticketsController@create')->name('register');
 Route::post('/altaTicket', 'ticketsController@store');
 
+//Bajas
+Route::delete('/bajaAdmin/{id}','adminController@destroy');
+Route::delete('/bajaUsuario/{id}','usuarioController@destroy');
+Route::delete('/bajaTicket/{id}','ticketsController@destroy');
+Route::delete('/bajaSucursal/{id}','sucursalController@destroy');
+
+//ComboBoxes
+Route::get('/altaAdmin', 'perfilController@combo');
+Route::get('/altaUsuario', 'perfilController@combo');
+Route::get('/editaAdmin/{id}','perfilController@combo');
+
+//Modificaciones
+Route::get('/editaAdmin/{id}','adminController@edit');
+
+
+
+
+//Dashboard
+Route::get('/dashboard', 'perfilController@contenidoDashboard');
+
+
+
+
+
 
 Route::get('/perfil','perfilController@perfilAdministrador');
 Route::get('/administradores','perfilController@mostrarAdministradores');

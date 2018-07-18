@@ -17,6 +17,7 @@
                                             <th>Nombre</th>
                                             <th>Direccion</th>
                                             <th>Telefono</th>
+                                            <th>Accion</th>
                                         </thead>
                                         @foreach ($sucursal as $sucursal) 
                                         <tbody>
@@ -25,6 +26,19 @@
                                                 <td>{{ $sucursal->name }}</td>
                                                 <td>{{ $sucursal->direccion }}</td>
                                                 <td>{{ $sucursal->telefono }}</td>
+                                                <td> 
+                                                <form action="" method="post">
+                                                    {{ csrf_field() }}
+                                                    <!--{{ method_field('PUT') }}-->
+                                                    <button type="submit"><i class="fa fa-edit"></i></button>
+                                                </form>
+                                                <form action="{{'/admin/bajaSucursal/'.$sucursal->id}}" method="post"> 
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+
+                                                    <button type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+                                                </form> 
+                                            </td>
                                             </tr>
                                             
                                         </tbody>

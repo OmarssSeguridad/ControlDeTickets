@@ -28,6 +28,10 @@ Route::group(['prefix' => 'admin'], function () {
   Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
   Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
+  //DELETES 
+  //Route::delete('/admin/bajaAdmin/{id}','adminController@destroy');
+
+
 });
 
 Route::group(['prefix' => 'usuario'], function () {
