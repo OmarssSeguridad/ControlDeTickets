@@ -41,7 +41,8 @@ Route::get('/altaUsuario', 'perfilController@combo');
 Route::get('/editaAdmin/{id}','perfilController@combo');
 
 //Modificaciones
-Route::get('/editaAdmin/{id}','adminController@edit');
+Route::get('/editaAdmin/{id}','adminController@edit')->name('editar');
+Route::put('/editarAdmin/{id}','adminController@update');
 
 
 

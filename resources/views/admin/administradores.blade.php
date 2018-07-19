@@ -37,8 +37,8 @@
                                                 <td>{{ $admin->sucursal }}</td>
                                                 <td>{{ $admin->noEmpleado }}</td>
                                                 <td> 
-                                                <form action="{{'/admin/editaAdmin/'.$admin->id}}" method="put">
-                                                    {{ csrf_field() }}
+                                                <form action="{{'/admin/editaAdmin/'.$admin->id}}" method="PUT">
+                                                
 
                                                     <button type="submit"><i class="fa fa-edit"></i></button>
                                                 </form>
