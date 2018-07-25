@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Usuario;
+use App\Departamento;
+use App\Cargo;
+use App\Sucursal;
+
 
 
 class usuarioController extends Controller
@@ -46,11 +50,58 @@ class usuarioController extends Controller
     }
     public function destroy($id)
     {
-        $admin= Usuario::find($id);
-        $admin->delete();
+        $usuario= Usuario::find($id);
+        $usuario->delete();
         session()->flash('message','Eliminado Correctamente');
         return redirect('admin/usuarios');
 
-        return $id;
+    }
+    public function edit($id)
+    {
+                /*$admin= Admin::find($id);
+        $admin->name = $request->name;
+        $admin->password = bcrypt($request->password);
+        $admin->departamento = $request->departamento;
+        $admin->cargo = $request->cargo;
+        $admin->telefono = $request->telefono;
+        $admin->direccion = $request->direccion;
+        $admin->sucursal = $request->sucursal; 
+        $admin->noEmpleado = $request->noEmpleado;*/
+
+        $usuario=Usuario::find($id);
+        $departamento = Departamento::all();
+        $cargo=Cargo::all();
+        $sucursal=Sucursal::all();
+        $selectedDep =Usuario::find($id)->departamento;
+        $selectedCar =Usuario::find($id)->cargo;
+        $selectedSuc =Usuario::find($id)->sucursal;
+        return view('admin.editarUsuario',compact('usuario','departamento','cargo','sucursal','selectedDep','selectedCar','selectedSuc'));
+    }
+    
+    public function update(Admin $id)
+    {
+
+        $usuario=request()->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'departamento'=>'required',
+            'cargo'=>'required',
+            'telefono'=>'required',
+            'direccion'=>'required',
+            'password'=>'',
+            'sucursal'=>'required',
+            'noEmpleado'=>'required',
+        ]); 
+
+        if($usuario['password']!=null)
+        {
+            $usuario['password']=bcrypt($usuario['password']);
+        }else
+        {
+            unset($usuario['password']);
+        } 
+        $id->update($usuario);
+        return redirect('admin/administradores')->with('success', 'Registro modificado correctamente');
+
     }
 }

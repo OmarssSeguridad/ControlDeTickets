@@ -7,7 +7,7 @@ use App\Admin;
 use App\Departamento;
 use App\Cargo;
 use App\Sucursal;
-
+use DB;
 
 class adminController extends Controller
 {
@@ -58,16 +58,17 @@ class adminController extends Controller
 
 
     }
-
+//Buscar el departamendo del id
     public function edit($id)
     {
         $admin=Admin::find($id);
         $departamento = Departamento::all();
         $cargo=Cargo::all();
         $sucursal=Sucursal::all();
-
-
-        return view('admin.editarAdmin',compact('admin','departamento','cargo','sucursal'));
+        $selectedDep =Admin::find($id)->departamento;
+        $selectedCar =Admin::find($id)->cargo;
+        $selectedSuc =Admin::find($id)->sucursal;
+        return view('admin.editarAdmin',compact('admin','departamento','cargo','sucursal','selectedDep','selectedCar','selectedSuc'));
     }
     
     public function update(Admin $id)
@@ -96,18 +97,20 @@ class adminController extends Controller
 
 
 
-        if($admin['password']!=null){
+        if($admin['password']!=null)
+        {
 
          $admin['password']=bcrypt($admin['password']);
-     }else{
-      unset($admin['password']);
-  } 
+        }else
+        {
+            unset($admin['password']);
+        } 
 
 
   $id->update($admin);
   
 //dd($admin);
-  return redirect()->route('admin.administradores')->with('success', 'Registro modificado correctamente');
+  return redirect('admin/administradores')->with('success', 'Registro modificado correctamente');
 
 }
 

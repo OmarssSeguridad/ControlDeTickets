@@ -29,9 +29,7 @@ public function store(Request $request)
         'detalle'=>'required',
 
     ]);
-
      $tickets->save(); 
-
     return redirect('/admin/dashboard');
 }
     public function destroy($id)
@@ -40,12 +38,34 @@ public function store(Request $request)
         $admin->delete();
         session()->flash('message','Eliminado Correctamente');
         return redirect('admin/tickets');
-
-        return $id;
     }
     public function combo()
     {
         $cargo = Status::all();
         return view('admin.tickets', compact('status'));
     }
+
+
+    public function edit($id)
+    {
+        $tickets=Tickets::find($id);
+        return view('admin.editaTickets',compact('tickets'));
+    }
+    
+    public function update(Admin $id)
+    {
+
+        $tickets=request()->validate([
+        'asunto'=>'required',
+        'detalle'=>'required',
+        ]); 
+
+  $id->update($tickets);
+  
+  return redirect('admin/tickets')->with('success', 'Registro modificado correctamente');
+
+}
+
+
+
 }

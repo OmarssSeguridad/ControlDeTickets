@@ -30,11 +30,48 @@ class sucursalController extends Controller
     }
     public function destroy($id)
     {
-        $admin= Sucursal::find($id);
-        $admin->delete();
+        $sucursal= Sucursal::find($id);
+        $sucursal->delete();
         session()->flash('message','Eliminado Correctamente');
         return redirect('admin/sucursales');
 
         return $id;
     }
+    //Buscar el departamendo del id
+    public function edit($id)
+    {
+
+        $sucursal=Sucursal::find($id);
+        return view('admin.editarSucursal',compact('sucursal'));
+    }
+    
+    public function update(Admin $id)
+    {
+        /*$admin= Admin::find($id);
+        $admin->name = $request->name;
+        $admin->password = bcrypt($request->password);
+        $admin->departamento = $request->departamento;
+        $admin->cargo = $request->cargo;
+        $admin->telefono = $request->telefono;
+        $admin->direccion = $request->direccion;
+        $admin->sucursal = $request->sucursal; 
+        $admin->noEmpleado = $request->noEmpleado;*/
+
+        $sucursal=request()->validate([
+            'name'=>'required',
+            'direccion'=>'required',
+            'telefono'=>'required',
+        ]); 
+
+
+
+
+
+        $id->update($sucursal);
+  
+//dd($admin);
+  return redirect('admin/administradores')->with('success', 'Registro modificado correctamente');
+
+}
+
 }

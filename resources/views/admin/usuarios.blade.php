@@ -37,10 +37,11 @@
                                                 <td>{{ $usuario->sucursal }}</td>
                                                 <td>{{ $usuario->noEmpleado }}</td>
                                                 <td> 
-                                                <form action="" method="post">
+                                                <form action="{{'/admin/editaUsuario/'.$usuario->id}}" method="PUT">
                                                     {{ csrf_field() }}
-                                                    <!--{{ method_field('PUT') }}-->
+                                                    {{ method_field('PUT') }}
                                                     <button type="submit"><i class="fa fa-edit"></i></button>
+
                                                 </form>
                                                 <form action="{{'/admin/bajaUsuario/'.$usuario->id}}" method="post"> 
                                                     {{ csrf_field() }}

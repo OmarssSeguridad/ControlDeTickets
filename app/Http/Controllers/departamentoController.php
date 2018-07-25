@@ -23,4 +23,42 @@ class departamentoController extends Controller
         $departamento->save(); 
         return redirect('/admin/dashboard');
     }
+    //Buscar el departamendo del id
+    public function edit($id)
+    {
+        $departamento = Departamento::all();
+        return view('admin.editarDepartamento',compact('departamento'));
+    }
+    
+    public function update(Admin $id)
+    {
+
+
+        $admin=request()->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'departamento'=>'required',
+            'cargo'=>'required',
+            'telefono'=>'required',
+            'direccion'=>'required',
+            'password'=>'',
+            'sucursal'=>'required',
+            'noEmpleado'=>'required',
+        ]); 
+
+        if($admin['password']!=null)
+        {
+         $admin['password']=bcrypt($admin['password']);
+        }else
+        {
+            unset($admin['password']);
+        } 
+
+
+  $id->update($admin);
+  
+//dd($admin);
+  return redirect('admin/Departamentos')->with('success', 'Registro modificado correctamente');
+
+}
 }
