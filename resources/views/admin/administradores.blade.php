@@ -38,7 +38,8 @@
                                                 <td>{{ $admin->noEmpleado }}</td>
                                                 <td> 
                                                 <form action="{{'/admin/editaAdmin/'.$admin->id}}" method="PUT">
-                                                
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('PUT') }}
 
                                                     <button type="submit"><i class="fa fa-edit"></i></button>
                                                 </form>

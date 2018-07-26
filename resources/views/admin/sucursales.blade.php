@@ -27,9 +27,9 @@
                                                 <td>{{ $sucursal->direccion }}</td>
                                                 <td>{{ $sucursal->telefono }}</td>
                                                 <td> 
-                                                <form action="" method="post">
+                                                 <form action="{{'/admin/editaSucursal/'.$sucursal->id}}" method="PUT">
                                                     {{ csrf_field() }}
-                                                    <!--{{ method_field('PUT') }}-->
+                                                    {{ method_field('PUT') }}
                                                     <button type="submit"><i class="fa fa-edit"></i></button>
                                                 </form>
                                                 <form action="{{'/admin/bajaSucursal/'.$sucursal->id}}" method="post"> 

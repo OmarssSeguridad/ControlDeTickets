@@ -11,22 +11,22 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 //Altas de administrador
 
-Route::get('/altaAdmin', 'adminController@create')->name('register');
+Route::get('/altaAdmin', 'adminController@create')->name('altaAdmin');
 Route::post('/altaAdmin', 'adminController@store');
 
-Route::get('/altaUsuario', 'usuarioController@create')->name('register');
+Route::get('/altaUsuario', 'usuarioController@create')->name('altaUsuario');
 Route::post('/altaUsuario', 'usuarioController@store');
 
-Route::get('/altaSucursal', 'sucursalController@create')->name('register');
+Route::get('/altaSucursal', 'sucursalController@create')->name('altaSucursal');
 Route::post('/altaSucursal', 'sucursalController@store');
 
-Route::get('/altaCargo', 'cargoController@create')->name('register');
+Route::get('/altaCargo', 'cargoController@create')->name('altaCargo');
 Route::post('/altaCargo', 'cargoController@store');
 
-Route::get('/altaDepartamento', 'departamentoController@create')->name('register');
+Route::get('/altaDepartamento', 'departamentoController@create')->name('altaDepartamento');
 Route::post('/altaDepartamento', 'departamentoController@store');
 
-Route::get('/altaTicket', 'ticketsController@create')->name('register');
+Route::get('/altaTicket', 'ticketsController@create')->name('altaTicket');
 Route::post('/altaTicket', 'ticketsController@store');
 
 //Bajas
@@ -41,16 +41,21 @@ Route::get('/altaUsuario', 'perfilController@combo');
 Route::get('/editaAdmin/{id}','perfilController@combo');
 
 //Modificaciones
-Route::get('/editaAdmin/{id}','adminController@edit')->name('editar');
+Route::get('/editaAdmin/{id}','adminController@edit')->name('editarAdmin');
 Route::put('/editarAdmin/{id}','adminController@update');
 
+Route::get('/editaUsuario/{id}','usuarioController@edit')->name('editarUsuario');
+Route::put('/editarUsuario/{id}','usuarioController@update');
 
+Route::get('/editaSucursal/{id}','sucursalController@edit')->name('editarUsuario');
+Route::put('/editarSucursal/{id}','sucursalController@update');
+
+Route::get('/editaTicket/{id}','ticketsController@edit')->name('editarTicket');
+Route::put('/editarTicket/{id}','ticketsController@update');
 
 
 //Dashboard
 Route::get('/dashboard', 'perfilController@contenidoDashboard');
-
-
 
 
 
