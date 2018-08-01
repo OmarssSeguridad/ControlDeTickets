@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Admin;
+use App\Usuario;
 use App\Departamento;
 use App\Cargo;
 use App\Sucursal;

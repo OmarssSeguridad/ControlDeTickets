@@ -6,6 +6,9 @@ use App\Sucursal;
 use App\Cargo;
 use App\Departamento;
 use App\Status;
+use App\Respuestas;
+use App\Tickets;
+use View;
 use DB;
 class perfilController extends Controller
 {
@@ -47,6 +50,16 @@ class perfilController extends Controller
     {
         $sucursal = collect(DB::table('sucursals')->get());
         return view('admin.sucursales',compact('sucursal'));
+    }
+    public function mostrarRespuestas($id)
+    {
+
+        //$respuestas = Respuestas::all()->get('idTicket',$id);
+        $tickets=Tickets::find($id);
+        $status= Status::all();
+        $selectedSta = Tickets::find($id)->status;
+        $respuestas = Respuestas::where('idTicket','=',$id)->get();
+        return View::make('admin.editaTickets',compact('tickets','status','selectedSta'))->with('respuestas',$respuestas);
     }
     //COMBOBOX
     public function combo()

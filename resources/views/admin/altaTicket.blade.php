@@ -29,8 +29,7 @@
                                 <div class="col-md-3 pr-1">
                                     <div class="form-group">
                                         <label>Folio</label>
-                                        <input type="text" class="form-control" disabled="folio" placeholder="" value="{{ DB::getPdo()->lastInsertId()+1
-                                    }}" >
+                                        <input type="text" class="form-control"readonly="" placeholder="" value="{{ $tic+1}}" >
                                 </div>
                             </div>
 
@@ -76,7 +75,7 @@
                         <div class="col-md-3 pl-1 ">
                             <div class="form-group">
                                 <label>Status</label>
-                                <input type="text"  id="Status"  readonly=""  value="Pendiente" name="status" class="form-control ">
+                                <input type="text"  id="Status"  readonly=""  value="ALTA" name="status" class="form-control ">
                             </div>
                         </div>
 
