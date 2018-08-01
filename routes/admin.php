@@ -50,14 +50,19 @@ Route::put('/editarUsuario/{id}','usuarioController@update');
 Route::get('/editaSucursal/{id}','sucursalController@edit')->name('editarUsuario');
 Route::put('/editarSucursal/{id}','sucursalController@update');
 
-Route::get('/editaTicket/{id}','ticketsController@edit')->name('editarTicket');
-Route::put('/editarTicket/{id}','ticketsController@update');
+//Route::get('/editaTicket/{id}','ticketsController@edit')->name('editarTicket');
+//Route::put('/editarTicket/{id}','ticketsController@update');
 
 
 //Dashboard
 Route::get('/dashboard', 'perfilController@contenidoDashboard');
 
+//Respuestas
+//Route::get('/enviarRespuesta', 'respuestasController@create')->name('altaRespuesta');
+Route::post('/enviarRespuesta','respuestasController@store');
 
+//Status
+Route::put('/cambiarStatus/{id}','ticketsController@modificaStatus');
 
 
 Route::get('/perfil','perfilController@perfilAdministrador');
@@ -65,4 +70,5 @@ Route::get('/administradores','perfilController@mostrarAdministradores');
 Route::get('/usuarios','perfilController@mostrarUsuarios');
 Route::get('/tickets','perfilController@mostrarTickets');
 Route::get('/sucursales','perfilController@mostrarSucursales');
+Route::get('/editaTicket/{id}', 'perfilController@mostrarRespuestas'); 
 

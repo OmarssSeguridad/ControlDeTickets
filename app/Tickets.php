@@ -19,5 +19,9 @@ class Tickets extends Model
     {
         return $this->belongsTo(Status::class);
     }
+    public function respuestas()
+    {
+        return $this->belongsTo(Respuestas::class);
+    }
 
 }

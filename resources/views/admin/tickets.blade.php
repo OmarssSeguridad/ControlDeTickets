@@ -30,24 +30,11 @@
                                                 <td>{{ $ticket->sucursal }}</td>
                                                 <td>{{ $ticket->asunto }}</td>
                                                 <td>{{ $ticket->detalle }}</td>
-                                                <td>
-                                                <form method="POST" action="">
-                                                    <div class="btn-group">  
-                                                    <div class="col-md-9">                      
-                                                     <select name="status" class="form-control"> 
-                                                        @foreach($status as $status)
-                                                        @endforeach                                    
-                                                    </select> 
-                                                  </div>
-                                                  </div>
-                                                </form>
-
-                                                </td>
+                                                <td>{{ $ticket->status }}</td>
                                                 <td>{{ $ticket->evidencia }}</td>    
                                                 <td> 
-                                                <form action="{{'/admin/editaTicket/'.$ticket->id}}" method="put">
+                                                <form action="{{'/admin/editaTicket/'.$ticket->id}}" method="GET">
                                                     {{ csrf_field() }}
-                                                    {{ method_field('PUT') }}
                                                     <button type="submit"><i class="fa fa-edit"></i></button>
                                                 </form>
                                                
