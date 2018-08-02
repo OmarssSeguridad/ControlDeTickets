@@ -21,7 +21,7 @@ class departamentoController extends Controller
         'name'=>'required',
         ]);
         $departamento->save(); 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/AltaDepartamento');
     }
     //Buscar el departamendo del id
     public function edit($id)
@@ -30,7 +30,7 @@ class departamentoController extends Controller
         return view('admin.editarDepartamento',compact('departamento'));
     }
     
-    public function update(Admin $id)
+    public function update(Departamento $id)
     {
 
 

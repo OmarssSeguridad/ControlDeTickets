@@ -62,7 +62,6 @@ Route::get('/dashboard', 'perfilController@contenidoDashboard');
 Route::post('/enviarRespuesta','respuestasController@store');
 
 //Status
-Route::put('/cambiarStatus/{id}','ticketsController@modificaStatus');
 
 
 Route::get('/perfil','perfilController@perfilAdministrador');
@@ -70,5 +69,9 @@ Route::get('/administradores','perfilController@mostrarAdministradores');
 Route::get('/usuarios','perfilController@mostrarUsuarios');
 Route::get('/tickets','perfilController@mostrarTickets');
 Route::get('/sucursales','perfilController@mostrarSucursales');
-Route::get('/editaTicket/{id}', 'perfilController@mostrarRespuestas'); 
+
+Route::get('/editaTicket/{id}', 'ticketsController@edit'); 
+
+Route::put('/cambiarStatus/{id}','ticketsController@modificaStatus');
+
 

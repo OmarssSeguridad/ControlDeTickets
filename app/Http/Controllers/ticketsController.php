@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Tickets;
 use App\Usuario;
 use App\Status;
+use App\Respuestas;
 use DB;
 
 class ticketsController extends Controller
@@ -34,7 +35,7 @@ public function store(Request $request)
 
     ]);
      $tickets->save(); 
-    return redirect('/admin/dashboard');
+    return redirect('/admin/tickets');
 }
     public function destroy($id)
     {
@@ -53,11 +54,12 @@ public function store(Request $request)
     public function edit($id)
     {
       //  $respuestas = collect(DB::table('respuestas')->select('idTicket','idUsuario','detalle','created_at')->where($id));
-        $tickets=Tickets::find($id);
-        $status=Status::all();
+         $tickets=Tickets::find($id);
+        $status= Status::all();
         $selectedSta = Tickets::find($id)->status;
-        //NO MOVER ESTA MALDITA RUTA
-        return view('admin.editaTickets',compact('tickets','status','selectedSta'));
+        $respuestas = Respuestas::where('idTicket','=',$id)->get();
+        
+        return view('admin.editaTickets',compact('tickets','status','selectedSta','respuestas'));
     }
     
     public function update(Admin $id)
@@ -75,14 +77,15 @@ public function store(Request $request)
 
 }
 
-public function modificaStatus(Tickets $id){
+public function modificaStatus(Request $request, $id){
 
-        $status= request()->validate([
-            'status'=>'required',
-        ]);
-        $id->update($status);
+      $tickets = Tickets::find($id);   
+   
+    $tickets->status = $request->status;
 
-        return redirect('/admin/editaTicket/'.$id);
+   
+     $tickets->save(); 
+    return redirect('/admin/editaTicket/'.$id)->with('success', 'Registro modificado correctamente');
     }
 
 

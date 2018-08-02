@@ -47,15 +47,23 @@
                                               <form method="POST" action="{{url("/admin/cambiarStatus/{$tickets->id}")}}">
                                                 {{ csrf_field() }}
                                                 {{ method_field('PUT') }}
-                                                <select name="status" class="form-control" placeholder="Selecciona">
+                                                @if($tickets->status=="FINALIZADO")
+                                                <select name="status"  class="form-control" placeholder="Selecciona">
+                                                    @foreach($status as $status)
+                                                    <option disabled="" {{ $selectedSta== $status->name ? 'selected="selected"' : '' }} >{{$status->name}}</option>
+                                                    @endforeach
+                                                </select>
+
+                                                @else
+                                                <select name="status"  class="form-control" placeholder="Selecciona">
                                                     @foreach($status as $status)
                                                     <option {{ $selectedSta== $status->name ? 'selected="selected"' : '' }} >{{$status->name}}</option>
                                                     @endforeach
                                                 </select>
-                                                 <div class="col-md-6">
+                                                <div class="col-md-6">
                                                     <button type="submit" class="btn btn-primary">Cambiar Status</button>
                                                 </div>
-
+                                                @endif
                                             </form>
 
                                         </div>
@@ -88,7 +96,14 @@
                                             <input type="hidden"   name="sucursal" value="{{$tickets->sucursal}}">
                                             <input type="hidden"  placeholder="Asunto" name="asunto" readonly="" value="{{$tickets->asunto}}">
                                             <textarea id="detalle" name="detalle" placeholder="Ingresar texto"rows="10" maxlength="255" class="form-control"></textarea>
+                                            
+                                             @if($tickets->status=="FINALIZADO")
+                                                <h4>TICKET CERRADO {{$tickets->updated_at}} </h4>
+                                            @else
                                             <button type="submit" class="btn btn-info btn-fill pull-right">Enviar Respuesta</button>
+                                                
+                                            @endif
+                                         
                                         </form>
                                     </section>
                                     </div>

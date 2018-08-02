@@ -46,7 +46,7 @@ class adminController extends Controller
 
         ]);
         $admin->save(); 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/administradores');
     }
 
 
