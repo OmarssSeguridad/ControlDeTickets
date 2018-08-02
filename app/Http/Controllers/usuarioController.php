@@ -46,7 +46,7 @@ class usuarioController extends Controller
         ]);
 
         $usuario->save(); 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/usuarios');
     }
     public function destroy($id)
     {

@@ -26,7 +26,7 @@ class sucursalController extends Controller
         'telefono'=>'required',
         ]);
         $sucursal->save(); 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/sucursales');
     }
     public function destroy($id)
     {
@@ -45,7 +45,7 @@ class sucursalController extends Controller
         return view('admin.editarSucursal',compact('sucursal'));
     }
     
-    public function update(Admin $id)
+    public function update(sucursales $id)
     {
         /*$admin= Admin::find($id);
         $admin->name = $request->name;
@@ -70,7 +70,7 @@ class sucursalController extends Controller
         $id->update($sucursal);
   
 //dd($admin);
-  return redirect('admin/administradores')->with('success', 'Registro modificado correctamente');
+  return redirect('admin/sucursales')->with('success', 'Registro modificado correctamente');
 
 }
 

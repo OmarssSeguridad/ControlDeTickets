@@ -59,7 +59,9 @@ class perfilController extends Controller
         $status= Status::all();
         $selectedSta = Tickets::find($id)->status;
         $respuestas = Respuestas::where('idTicket','=',$id)->get();
-        return View::make('admin.editaTickets',compact('tickets','status','selectedSta'))->with('respuestas',$respuestas);
+        
+        return view('admin.editaTickets',compact('tickets','status','selectedSta','respuestas'));
+        //return View::make('admin.editaTickets',compact('tickets','status','selectedSta'))->with('respuestas',$respuestas);
     }
     //COMBOBOX
     public function combo()

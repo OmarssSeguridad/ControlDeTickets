@@ -18,6 +18,6 @@ public function create()
         'name'=>'required',
     ]);
         $cargo->save(); 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/AltaCargo');
     }
 }
