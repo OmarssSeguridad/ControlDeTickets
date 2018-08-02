@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tickets;
 use App\Usuario;
+use App\Status;
 use DB;
 
 class ticketsController extends Controller

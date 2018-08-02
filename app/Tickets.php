@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tickets extends Model
 {
+    protected $table='tickets';
+    //protected $fillable = [ 'name','sucursal','asunto','detalle','evidencia' ];
+    protected $fillable=['status'];
+    protected $primaryKey='id';
 
     public function usuario()
     {

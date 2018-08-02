@@ -44,7 +44,7 @@
                                     <div class="col-md-2 pl-1">
                                         <div class="form-group">
                                             <label>Status</label>
-                                              <form method="PUT" action="{{url("/admin/cambiarStatus/{$tickets->id}")}}">
+                                              <form method="POST" action="{{url("/admin/cambiarStatus/{$tickets->id}")}}">
                                                 {{ csrf_field() }}
                                                 {{ method_field('PUT') }}
                                                 <select name="status" class="form-control" placeholder="Selecciona">
