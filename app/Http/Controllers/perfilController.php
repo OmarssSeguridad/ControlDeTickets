@@ -8,6 +8,7 @@ use App\Departamento;
 use App\Status;
 use App\Respuestas;
 use App\Tickets;
+use Auth;
 use View;
 use DB;
 class perfilController extends Controller
@@ -15,6 +16,10 @@ class perfilController extends Controller
     public function perfilAdministrador()
     {
        	return view('admin.perfil');
+    }   
+    public function perfilUsuario()
+    {
+        return view('usuario.perfil');
     }   
     public function contenidoDashboard(){        
                 
@@ -46,23 +51,23 @@ class perfilController extends Controller
 
 
     }
+    public function mostrarTicketsUsuario()
+    {
+        //$ticket = collect(DB::table('tickets')->get());
+        $user = Auth::user()->name;
+        $ticket = Tickets::where('name','=',$user)->get();
+        $status = Status::all();
+
+        return view('usuario.tickets',compact('ticket','status'));
+
+
+    }
     public function mostrarSucursales()
     {
         $sucursal = collect(DB::table('sucursals')->get());
         return view('admin.sucursales',compact('sucursal'));
     }
-    public function mostrarRespuestas($id)
-    {
 
-        //$respuestas = Respuestas::all()->get('idTicket',$id);
-        $tickets=Tickets::find($id);
-        $status= Status::all();
-        $selectedSta = Tickets::find($id)->status;
-        $respuestas = Respuestas::where('idTicket','=',$id)->get();
-        
-        return view('admin.editaTickets',compact('tickets','status','selectedSta','respuestas'));
-        //return View::make('admin.editaTickets',compact('tickets','status','selectedSta'))->with('respuestas',$respuestas);
-    }
     //COMBOBOX
     public function combo()
     {

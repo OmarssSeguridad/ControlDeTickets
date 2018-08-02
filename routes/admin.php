@@ -59,7 +59,7 @@ Route::get('/dashboard', 'perfilController@contenidoDashboard');
 
 //Respuestas
 //Route::get('/enviarRespuesta', 'respuestasController@create')->name('altaRespuesta');
-Route::post('/enviarRespuesta','respuestasController@store');
+Route::post('/enviarRespuesta','respuestasController@storeUsuario');
 
 //Status
 

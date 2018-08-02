@@ -16,6 +16,12 @@ public function create()
     $tic = DB::table('tickets')->select('id')->max('id');
     return view('admin.AltaTicket',compact('tic')); 
 }
+public function createUsuario()
+{
+    $tic = DB::table('tickets')->select('id')->max('id');
+    return view('usuario.AltaTicket',compact('tic')); 
+}
+
 public function store(Request $request)
 {
 
@@ -37,6 +43,28 @@ public function store(Request $request)
      $tickets->save(); 
     return redirect('/admin/tickets');
 }
+public function storeUsuario(Request $request)
+{
+
+
+    $tickets = new Tickets;   
+    $tickets->name = $request->name;
+    $tickets->sucursal = $request->sucursal;
+    $tickets->asunto = $request->asunto;
+    $tickets->detalle = $request->detalle;
+    $tickets->status = $request->status;
+    $tickets->evidencia = $request->evidencia;
+   
+
+    $this->validate($request, [
+        'asunto'=>'required',
+        'detalle'=>'required',
+
+    ]);
+     $tickets->save(); 
+    return redirect('/usuario/tickets');
+}
+
     public function destroy($id)
     {
         $admin= Tickets::find($id);
@@ -60,6 +88,16 @@ public function store(Request $request)
         $respuestas = Respuestas::where('idTicket','=',$id)->get();
         
         return view('admin.editaTickets',compact('tickets','status','selectedSta','respuestas'));
+    }
+        public function editUsuario($id)
+    {
+      //  $respuestas = collect(DB::table('respuestas')->select('idTicket','idUsuario','detalle','created_at')->where($id));
+         $tickets=Tickets::find($id);
+        $status= Status::all();
+        $selectedSta = Tickets::find($id)->status;
+        $respuestas = Respuestas::where('idTicket','=',$id)->get();
+        
+        return view('usuario.editaTickets',compact('tickets','status','selectedSta','respuestas'));
     }
     
     public function update(Admin $id)
