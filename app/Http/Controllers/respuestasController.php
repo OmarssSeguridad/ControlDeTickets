@@ -23,4 +23,20 @@ class respuestasController extends Controller
 	    $respuestas->save();
 	    return redirect('/admin/editaTicket/'.$respuestas->idTicket);
 	}
+
+	    public function storeUsuario(Request $request)
+	{
+	    $respuestas = new Respuestas;   
+	   	$respuestas->idTicket = $request->id;
+	    $respuestas->asunto = $request->asunto;
+	    $respuestas->detalle = $request->detalle;
+	    $respuestas->idUsuario = $request->name;
+
+	    $this->validate($request, [
+	        'detalle'=>'required',
+
+	    ]);
+	    $respuestas->save();
+	    return redirect('/usuario/editaTicket/'.$respuestas->idTicket);
+	}
 }
