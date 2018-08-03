@@ -19,7 +19,6 @@
                                             <th>Asunto</th>
                                             <th>Detalle</th>
                                             <th>Status</th>
-                                            <th>Evidencia</th>
                                             <th>Accion</th>
                                         </thead>
                                         @foreach ($ticket as $ticket) 
@@ -30,19 +29,33 @@
                                                 <td>{{ $ticket->sucursal }}</td>
                                                 <td>{{ $ticket->asunto }}</td>
                                                 <td>{{ $ticket->detalle }}</td>
-                                                <td>{{ $ticket->status }}</td>
-                                                <td>{{ $ticket->evidencia }}</td>    
+                                                <td>
+                                                    @if($ticket->status=="ALTA")
+                                                        <form action="{{'/admin/editaTicket/'.$ticket->id}}" method="GET">
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" style='width:130px'  class="btn btn-danger btn-fill pull-right">{{ $ticket->status }}</button>
+                                                        </form>
+                                                    @endif
+                                                    @if($ticket->status=="PROCESO")
+                                                        <form action="{{'/admin/editaTicket/'.$ticket->id}}" method="GET">
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" style='width:130px' width=10  class="btn btn-warning btn-fill pull-right">{{ $ticket->status }}</button>
+                                                        </form>
+                                                    @endif
+                                                    @if($ticket->status=="FINALIZADO")
+                                                        <form action="{{'/admin/editaTicket/'.$ticket->id}}" method="GET">
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" style='width:130px' width=10  class="btn btn-success btn-fill pull-right">{{ $ticket->status }}</button>
+                                                        </form>
+                                                    @endif
+                                                </td>
+                                                
                                                 <td> 
-                                                <form action="{{'/admin/editaTicket/'.$ticket->id}}" method="GET">
-                                                    {{ csrf_field() }}
-                                                    <button type="submit"><i class="fa fa-edit"></i></button>
-                                                </form>
-                                               
                                                 <form action="{{'/admin/bajaTicket/'.$ticket->id}}" method="post"> 
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
 
-                                                    <button type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+                                                    <button type="submit"class="btn btn-danger btn-fill pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
                                                 </form> 
                                                 </td>
                                             </tr>

@@ -41,18 +41,17 @@
                                                     {{ csrf_field() }}
                                                     {{ method_field('PUT') }}
 
-                                                    <button type="submit"><i class="fa fa-edit"></i></button>
+                                                    <button type="submit"class="btn btn-info btn-fill pull-right"><i class="fa fa-edit"></i></button>
                                                 </form>
                                                 <!--<form href="{{ action('adminController@destroy',$admin->id)}}" method="post">-->
                                                 <form action="{{'/admin/bajaAdmin/'.$admin->id}}" method="post"> 
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
 
-                                                    <button type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+                                                    <button type="submit" class="btn btn-danger btn-fill pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
                                                 </form> 
                                             </td>
                                             </tr>
-                                            
                                         </tbody>
                                         @endforeach
                                     </table>
@@ -62,5 +61,4 @@
                     </div>
                 </div>
             </div>
-
 @endsection('content')
