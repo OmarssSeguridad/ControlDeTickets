@@ -1,4 +1,4 @@
-@extends('usuario.layout.main')
+    @extends('usuario.layout.main')
 @section('content')
             <div class="content">
                 <div class="container-fluid">
@@ -107,43 +107,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <footer class="footer">
-                <div class="container">
-                    <nav>
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                        <p class="copyright text-center">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            <a href="">Hensa Distribuciones</a>, Hecho con ❤️ 
-                        </p>
-                    </nav>
-                </div>
-
-            </footer>
-  
+            </div>  
 
 @endsection

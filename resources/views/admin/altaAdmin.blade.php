@@ -118,7 +118,7 @@
                                 @endif
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 pl-1">
+                                            <div class="col-md-4 px-2">
                                                 <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }}">
                                                     <label>Telefono</label>
                                                     <input type="number" class="form-control" placeholder="(000)0000000" name="telefono" value="{{ old('telefono') }}">
@@ -130,19 +130,19 @@
                                 @endif
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 pl-1">
+                                            <div class="col-md-4 px-3">
                                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                                     <label>Password</label>
                                                     <input type="password" class="form-control" name="password" value="{{ old('password') }}">
 
-                                @if ($errors->has('password'))
-                                    <span class="alert alert-danger">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
+                                                    @if ($errors->has('password'))
+                                                        <span class="alert alert-danger">
+                                                            <strong>{{ $errors->first('password') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 pl-1">
+                                            <div class="col-md-4 pl-0">
                                                 <div id="password-confirmation" class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                                                     <label>Confirmar Password</label>
                                                     <input id="password-confirmation" type="password" class="form-control" name="password_confirmation" value="{{ old('password') }}">
@@ -154,9 +154,6 @@
                                                     @endif
                                                 </div>
                                             </div>
-
-
-
                                         </div>
                                         <button type="submit" class="btn btn-info btn-fill pull-right">Crear Administrador</button>
                                     </form>
@@ -166,44 +163,5 @@
                     </div>
                 </div>
             </div>
-
-
-            <footer class="footer">
-                <div class="container">
-                    <nav>
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                        <p class="copyright text-center">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            <a href="">Hensa Distribuciones</a>, Hecho con ❤️ 
-                        </p>
-                    </nav>
-                </div>
-
-            </footer>
-  
 
 @endsection

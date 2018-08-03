@@ -16,11 +16,13 @@
     <link href="{{ asset('css/light-bootstrap-dashboard.css?v=2.0.1')}}" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{ asset('css/demo.css') }}" rel="stylesheet" />
+        <!-- CSS PANEL -->
+    <link href="{{ asset('css/panel.css') }}" rel="stylesheet" />
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-color="blue" data-image="{{ asset('img/sidebar-1.jpg') }}">
+        <div class="sidebar" data-color="orange" data-image="{{ asset('img/sidebar-1.jpg') }}">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -86,30 +88,13 @@
 
                         </ul>
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <span class="no-icon">Account</span>
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="no-icon">Dropdown</span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div>
-                            </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/admin/logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                         
-                                    <span class="no-icon">Log out</span>
+                                    <span class="no-icon">Cerrar Sesion</span>
 
                                     <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
@@ -126,6 +111,42 @@
                     @yield('content')
                 </div>
             </div>
+                        <footer class="footer">
+                <div class="container">
+                    <nav>
+                        <ul class="footer-menu">
+                            <li>
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Company
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-center">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            <a href="">Hensa Distribuciones</a>, Hecho con ❤️ 
+                        </p>
+                    </nav>
+                </div>
+
+            </footer>
     </div>
 </body>
 <!--   Core JS Files   -->
@@ -142,12 +163,12 @@
 <script src="{{ asset('js/plugins/bootstrap-notify.js') }}"></script>
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="{{ asset('js/light-bootstrap-dashboard.js?v=2.0.1') }}" type="text/javascript"></script>
-
+<!--
             <div class="content">
                 <div class="container-fluid">
                     @yield('content2')
                 </div>
             </div>
-
+-->
 
 </html>

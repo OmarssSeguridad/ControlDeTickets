@@ -45,32 +45,21 @@ class sucursalController extends Controller
         return view('admin.editarSucursal',compact('sucursal'));
     }
     
-    public function update(sucursales $id)
+    public function update(Request $request, $id)
     {
-        /*$admin= Admin::find($id);
-        $admin->name = $request->name;
-        $admin->password = bcrypt($request->password);
-        $admin->departamento = $request->departamento;
-        $admin->cargo = $request->cargo;
-        $admin->telefono = $request->telefono;
-        $admin->direccion = $request->direccion;
-        $admin->sucursal = $request->sucursal; 
-        $admin->noEmpleado = $request->noEmpleado;*/
+        $sucursal= Sucursal::find($id);
+        $sucursal->name = $request->name;
+        $sucursal->direccion = $request->direccion;
+        $sucursal->telefono = $request->telefono;
 
-        $sucursal=request()->validate([
-            'name'=>'required',
-            'direccion'=>'required',
-            'telefono'=>'required',
-        ]); 
-
-
-
-
-
-        $id->update($sucursal);
+        $this->validate($request, [
+        'name'=>'required',
+        'direccion'=>'required',
+        'telefono'=>'required',
+        ]);
+        $sucursal->save(); 
   
-//dd($admin);
-  return redirect('admin/sucursales')->with('success', 'Registro modificado correctamente');
+        return redirect('/admin/editaSucursal/'.$id);
 
 }
 
