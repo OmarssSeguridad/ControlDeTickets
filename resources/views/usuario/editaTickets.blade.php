@@ -28,20 +28,20 @@
                                             <input type="text" class="form-control" readonly="" placeholder="sucursal" name="sucursal" value="{{Auth::user()->sucursal}}">
                                         </div>
                                     </div>
-                                    <div class="col-md-11 pr-1">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Asunto</label>
                                             <input type="text" class="form-control" placeholder="Asunto" name="asunto" readonly="" value="{{$tickets->asunto}}">
                                         </div>
                                     </div>
-                                    <div class="col-md-12 pl-1">
+                                    <div class="col-md-12 px-3">
                                         <div class="form-group">
                                             <label>Detalle</label>
                                             <textarea type="text" rows="10" maxlength="255" name="detalle" id="detalle" value="detalle" readonly="" class="form-control">{{$tickets->detalle}} </textarea>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-2 pl-1">
+                                    <div class="col-md-3 px-3">
                                         <div class="form-group">
                                             <label>Status</label>
                                               <form method="POST" action="{{url("/admin/cambiarStatus/{$tickets->id}")}}">
@@ -68,24 +68,24 @@
 
                                         </div>
                                     </div>
-                                    <div class="col-md-12 pl-1">
+                                    <div class="col-md-12 px-3">
                                     <div class="form-group">
                                     <section id="respuestas">
                                         <section id="respuesta">
                                             @foreach($respuestas as $respuestas)
-                                                <label>Usuario: {{$respuestas->idUsuario}} Creado: {{$respuestas->created_at}}</label>
-                                                <label>Asunto: {{$respuestas->asunto}}</label>
-                                                <br/>
-                                                <label>Respuesta: {{$respuestas->detalle}}</label>
-                                                <br/>
-                                                
+                                              <div class="panel panel-info class">
+                                                    <div class="panel-heading">Usuario: {{$respuestas->idUsuario}} Creado: {{$respuestas->created_at}} 
+                                                    </div>
+                                                    <div class="panel-body">{{$respuestas->detalle}}
+                                                    </div>
+                                                </div>
                                             @endforeach
                                         </section>
                                     </section>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-11 pl-1">
+                                    <div class="col-md-11 px-3">
                                     <div class="form-group">
                                     <section>
                                         Respuesta
@@ -95,11 +95,12 @@
                                             <input type="hidden"   name="name" value="{{Auth::user()->name }}" >
                                             <input type="hidden"   name="sucursal" value="{{$tickets->sucursal}}">
                                             <input type="hidden"  placeholder="Asunto" name="asunto" readonly="" value="{{$tickets->asunto}}">
-                                            <textarea id="detalle" name="detalle" placeholder="Ingresar texto"rows="10" maxlength="255" class="form-control"></textarea>
+                                            
                                             
                                              @if($tickets->status=="FINALIZADO")
-                                                <h4>TICKET CERRADO {{$tickets->updated_at}} </h4>
+                                                <h3 align="center" style="color:RED">TICKET CERRADO {{$tickets->updated_at}} </h3>
                                             @else
+                                            <textarea id="detalle" name="detalle" placeholder="Ingresar texto"rows="10" maxlength="255" class="form-control"></textarea>
                                             <button type="submit" class="btn btn-info btn-fill pull-right">Enviar Respuesta</button>
                                                 
                                             @endif

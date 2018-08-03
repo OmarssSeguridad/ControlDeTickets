@@ -18,9 +18,8 @@
                                             <th>Sucursal</th>
                                             <th>Asunto</th>
                                             <th>Detalle</th>
-                                            <th>Status</th>
+                                            <th align="CENTER">Status</th>
                                             <th>Evidencia</th>
-                                            <th>Accion</th>
                                         </thead>
                                         @foreach ($ticket as $ticket) 
                                         <tbody>
@@ -30,16 +29,28 @@
                                                 <td>{{ $ticket->sucursal }}</td>
                                                 <td>{{ $ticket->asunto }}</td>
                                                 <td>{{ $ticket->detalle }}</td>
-                                                <td>{{ $ticket->status }}</td>
-                                                <td>{{ $ticket->evidencia }}</td>    
-                                                <td> 
-                                                <form action="{{'/usuario/editaTicket/'.$ticket->id}}" method="GET">
-                                                    {{ csrf_field() }}
-                                                    <button type="submit"><i class="fa fa-edit"></i></button>
-                                                </form>
-                                               
-                                                
+                                                <td>
+                                                    @if($ticket->status=="ALTA")
+                                                        <form action="{{'/usuario/editaTicket/'.$ticket->id}}" method="GET">
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" style='width:130px'  class="btn btn-danger btn-fill pull-right">{{ $ticket->status }}</button>
+                                                        </form>
+                                                    @endif
+                                                    @if($ticket->status=="PROCESO")
+                                                        <form action="{{'/usuario/editaTicket/'.$ticket->id}}" method="GET">
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" style='width:130px' width=10  class="btn btn-warning btn-fill pull-right">{{ $ticket->status }}</button>
+                                                        </form>
+                                                    @endif
+                                                    @if($ticket->status=="FINALIZADO")
+                                                        <form action="{{'/usuario/editaTicket/'.$ticket->id}}" method="GET">
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" style='width:130px' width=10  class="btn btn-success btn-fill pull-right">{{ $ticket->status }}</button>
+                                                        </form>
+                                                    @endif
                                                 </td>
+                                                
+
                                             </tr>
                                         </tbody>
                                         @endforeach
@@ -50,40 +61,4 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
-                <div class="container">
-                    <nav>
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                        <p class="copyright text-center">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            <a href="">Hensa Distribuciones</a>, Hecho con ❤️ 
-                        </p>
-                    </nav>
-                </div>
-
-            </footer>
 @endsection('content')

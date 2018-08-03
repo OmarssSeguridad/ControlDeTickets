@@ -40,14 +40,14 @@
                                                 <form action="{{'/admin/editaUsuario/'.$usuario->id}}" method="PUT">
                                                     {{ csrf_field() }}
                                                     {{ method_field('PUT') }}
-                                                    <button type="submit"><i class="fa fa-edit"></i></button>
+                                                    <button  type="submit" class="btn btn-info btn-fill pull-right"><i class="fa fa-edit"></i></button>
 
                                                 </form>
                                                 <form action="{{'/admin/bajaUsuario/'.$usuario->id}}" method="post"> 
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
 
-                                                    <button type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+                                                    <button type="submit" class="btn btn-danger btn-fill pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
                                                 </form> 
                                             </td>
                                             </tr>
@@ -61,40 +61,5 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
-                <div class="container">
-                    <nav>
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                        <p class="copyright text-center">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            <a href="">Hensa Distribuciones</a>, Hecho con ❤️ 
-                        </p>
-                    </nav>
-                </div>
 
-            </footer>
 @endsection('content')
