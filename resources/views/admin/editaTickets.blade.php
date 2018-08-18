@@ -14,15 +14,15 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-5 px-1">
+                                    <div class="col-md-5 px-3">
                                         <div class="form-group">
                                             <label>Usuario</label>
-                                            <input type="text" class="form-control" readonly="{{Auth::user()->name}}"  placeholder="name" name="name" value="{{ Auth::user()->name }}" >
+                                            <input type="text" class="form-control" readonly=""  placeholder="name" name="name" value="{{old('name',$tickets->name)}}" >
 
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4 pl-1">
+                                    <div class="col-md-4 pl-3">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Sucursal</label>
                                             <input type="text" class="form-control" readonly="" placeholder="sucursal" name="sucursal" value="{{Auth::user()->sucursal}}">
@@ -40,6 +40,7 @@
                                             <textarea type="text" rows="10" maxlength="255" name="detalle" id="detalle" value="detalle" readonly="" class="form-control">{{$tickets->detalle}} </textarea>
                                         </div>
                                     </div>
+
 
                                     <div class="col-md-3 px-3">
                                         <div class="form-group">
@@ -60,12 +61,21 @@
                                                     <option {{ $selectedSta== $status->name ? 'selected="selected"' : '' }} >{{$status->name}}</option>
                                                     @endforeach
                                                 </select>
-                                                <div class="col-md-6">
                                                     <button type="submit" class="btn btn-primary">Cambiar Status</button>
-                                                </div>
                                                 @endif
                                             </form>
 
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="col-md-3 pl-1">
+                                        <div class="form-group">
+                                            <label>Evidencia</label></br>
+                                             @if($tickets->evidencia==null)
+                                             <label>No Hay Evidencia</label>
+                                             @else
+                                             <img src="/storage/{{$tickets->evidencia}}" >
+                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-12 px-3">
@@ -85,7 +95,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-11 px-3">
+                                    <div class="col-md-11 px-1">
                                     <div class="form-group">
                                     <section>
                                        
@@ -99,9 +109,11 @@
                                              @if($tickets->status=="FINALIZADO")
                                                 <h3 align="center" style="color:RED">TICKET CERRADO {{$tickets->updated_at}} </h3>
                                             @else
-                                             Respuesta
+                                             <label><p>Escriba una Respuesta</p></label>
+                                            </br>
+                                             <label><em>Para ayudarle mejor, le pedimos que sea especifico y detallado*</em></label>
                                              <textarea id="detalle" name="detalle" placeholder="Ingresar texto"rows="10" maxlength="255" class="form-control"></textarea>
-                                            
+                                            </br>
                                             <button type="submit" class="btn btn-info btn-fill pull-right">Enviar Respuesta</button>
                                                 
                                             @endif

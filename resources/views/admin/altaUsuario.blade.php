@@ -24,7 +24,7 @@
                                             <div class="col-md-3 px-1">
                                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                                     <label>Nombre</label>
-                                                    <input type="text" class="form-control" placeholder="Username" name="name" value="{{ old('name') }}" autofocus >
+                                                    <input type="text" class="form-control" placeholder="Username" maxlength="30" name="name" value="{{ old('name') }}" autofocus >
                                 @if ($errors->has('name'))
                                     <span class="alert alert-danger">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -36,7 +36,7 @@
                                             <div class="col-md-4 pl-1">
                                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                                     <label for="email">Correo Electronico</label>
-                                                    <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
+                                                    <input type="email" maxlength="50" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
                                 @if ($errors->has('email'))
                                     <span class="alert alert-danger">
                                         <strong>{{ $errors->first('email') }}</strong>

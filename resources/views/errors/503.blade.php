@@ -1,12 +1,13 @@
-<!doctype html>
+    <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}" />
+        <link rel="icon" type="image/png" href="{{ asset('/img/favicon.ico') }}" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="{{ asset('/img/favicon.ico') }}">
 
-        <title>Control de Tickets</title>
+        <title>Kracken Fit | Mantenimiento</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -47,8 +48,12 @@
             }
 
             .title {
-                font-size: 84px;
+                padding: 0 50px;
+                font-size: 60px;
             }
+            p {
+                padding: 10px 30px;
+            } 
 
             .links > a {
                 color: #636b6f;
@@ -63,30 +68,27 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            @media (max-width: 799px) {
+                .title {
+                    font-size: 30px;
+                }
+
+                .links > a {
+                    font-size: 15px;
+                }
+            }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <!-- <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>-->
-                    @endauth
-                </div>
-            @endif
-
             <div class="content">
                 <div class="title m-b-md">
-                    Control de Tickets
+                    Error 503<br><br>
+                    Estamos experimentando dificultades técnicas
                 </div>
-
-                <div class="links">
-                   <a href="{{ url('admin/login') }}">Administrador</a>
-                    <a href="{{ url('usuario/login') }}">Usuario</a>
-                </div>
+                <p>Hemos enviado a los mejores y más valientes en busca del error, todo deberá solucionarse a la brevedad. Vuelve a intentarlo dentro de 10 minutos.</p>
+                <p>Si el error persiste, puedes escribirnos a <a href="mailto:atencionaclientes@grupohensa.com.mx">atencionaclientes@grupohensa.com.mx</a></p>
             </div>
         </div>
     </body>

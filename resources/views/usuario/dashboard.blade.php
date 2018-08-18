@@ -2,43 +2,21 @@
 @section('content')
     
 
+<div class="container-fluid">
+    <div class="row">
+        <h4><font color="Blue" face="Arial"><b>¡Bienvenido a Control de Tickets!</b></font></h4>   
+            <font color="Black" face="Arial" style='text-align: justify'>
+                <b>
+                Con el fin de agilizar las solicitudes de soporte y tener un mejor servicio utilizamos un control de Tickets de soporte.
+            
+                Cada solicitud de soporte se le acciona un número de Ticket único que se puede utilizar para rastrear el progreso y respuestas en línea. Para su referencia proporcionamos archivos completos y la historia de todas sus peticiones de ayuda. Por lo que es necesario una dirección de correo electrónico válida para poder presentar Tickets.
+                </b>
+            </font>
+    </div>
+</div>
             
 
-            <footer class="footer">
-                <div class="container">
-                    <nav>
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                        <p class="copyright text-center">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            <a href="">Hensa Distribuciones</a>, Hecho con ❤️ 
-                        </p>
-                    </nav>
-                </div>
-            </footer>
+
 
 @endsection
 @section('content2')

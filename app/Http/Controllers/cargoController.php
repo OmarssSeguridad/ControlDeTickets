@@ -8,7 +8,7 @@ class cargoController extends Controller
 {
 public function create()
     {
-        return view('admin.AltaCargo'); 
+        return view('admin.altaCargo'); 
     }
     public function store(Request $request)
     {
@@ -18,6 +18,43 @@ public function create()
         'name'=>'required',
     ]);
         $cargo->save(); 
-        return redirect('/admin/AltaCargo');
+        return redirect('/admin/altaCargo');
     }
+
+    public function edit($id)
+    {
+        $cargo=Cargo::find($id);
+        if($cargo==null)
+        {
+            return view('errors.404');
+        }
+        return view('admin.editarCargo',compact('cargo'));
+    }
+    
+    public function update(Cargo $id)
+    {
+        $cargo=request()->validate([
+            'name'=>'required',
+        ]); 
+        $id->update($cargo);
+  
+        //dd($admin);
+    return redirect('admin/cargos')->with('success', 'Registro modificado correctamente');
+
+    }
+
+    public function destroy($id)
+    {
+        $cargo= Cargo::find($id);
+        if($cargo==null)
+        {
+            return view('errors.404');
+        }
+        $cargo->delete();
+        session()->flash('message','Eliminado Correctamente');
+        return redirect('admin/cargos');
+
+
+    }    
+
 }

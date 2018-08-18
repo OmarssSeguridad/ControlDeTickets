@@ -13,11 +13,18 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(App\Usuario::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
+        'departamento' => $faker->randomElement(['Sistemas','Contabilidad','Ventas']),
+        'cargo' => $faker->randomElement(['Gerente','Auxiliar','CEO']),
+        'telefono' => $faker->randomDigit(),
+        'direccion' => $faker->address,
+        'sucursal' => $faker->randomElement(['Matriz','Power Motor','Motor World']),
+        'noEmpleado' => $faker->randomDigit(),
+        'password' => '123456', // secret
         'remember_token' => str_random(10),
     ];
 });
+

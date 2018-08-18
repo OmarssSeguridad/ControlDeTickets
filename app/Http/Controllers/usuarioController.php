@@ -18,8 +18,6 @@ class usuarioController extends Controller
     }
     public function store(Request $request)
     {
-    	
-
         $usuario = new Usuario;   
 
         $usuario->name = $request->name;
@@ -33,16 +31,15 @@ class usuarioController extends Controller
         $usuario->noEmpleado = $request->noEmpleado; 
 
         $this->validate($request, [
-        'name'=>'required',
-        'email'=>'required',
-        'password'=>'required',
-        'departamento'=>'required',
-        'cargo'=>'required',
-         'telefono'=>'required',
-        'direccion'=>'required',
-        'sucursal'=>'required',
-        'noEmpleado'=>'required',
-
+            'name'=>'required|max:30',
+            'email'=>'required',
+            'password'=>'required|min:6|max:30',
+            'departamento'=>'required',
+            'cargo'=>'required',
+            'telefono'=>'required|max:10',
+            'direccion'=>'required|max:100',
+            'sucursal'=>'required',
+            'noEmpleado'=>'required|max:5',
         ]);
 
         $usuario->save(); 
@@ -51,6 +48,10 @@ class usuarioController extends Controller
     public function destroy($id)
     {
         $usuario= Usuario::find($id);
+        if($usuario==null)
+        {
+            return view('errors.404');
+        }
         $usuario->delete();
         session()->flash('message','Eliminado Correctamente');
         return redirect('admin/usuarios');
@@ -69,6 +70,10 @@ class usuarioController extends Controller
         $admin->noEmpleado = $request->noEmpleado;*/
 
         $usuario=Usuario::find($id);
+        if($usuario==null)
+        {
+            return view('errors.404');
+        }
         $departamento = Departamento::all();
         $cargo=Cargo::all();
         $sucursal=Sucursal::all();
@@ -82,15 +87,15 @@ class usuarioController extends Controller
     {
 
         $usuario=request()->validate([
-            'name'=>'required',
+            'name'=>'required|max:30',
             'email'=>'required',
+            'password'=>'required|min:6|max:30',
             'departamento'=>'required',
             'cargo'=>'required',
-            'telefono'=>'required',
-            'direccion'=>'required',
-            'password'=>'',
+            'telefono'=>'required|max:10',
+            'direccion'=>'required|max:100',
             'sucursal'=>'required',
-            'noEmpleado'=>'required',
+            'noEmpleado'=>'required|max:5',
         ]); 
 
         if($usuario['password']!=null)

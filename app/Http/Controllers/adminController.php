@@ -15,7 +15,7 @@ class adminController extends Controller
 
     public function create()
     {
-        return view('admin.AltaAdmin'); 
+        //return view('admin.AltaAdmin'); 
     }
     public function store(Request $request)
     {
@@ -34,15 +34,15 @@ class adminController extends Controller
         $admin->noEmpleado = $request->noEmpleado; 
 
         $this->validate($request, [
-            'name'=>'required',
+            'name'=>'required|max:30',
             'email'=>'required',
-            'password'=>'required',
+            'password'=>'required|min:6|max:30',
             'departamento'=>'required',
             'cargo'=>'required',
-            'telefono'=>'required',
-            'direccion'=>'required',
+            'telefono'=>'required|max:10',
+            'direccion'=>'required|max:100',
             'sucursal'=>'required',
-            'noEmpleado'=>'required',
+            'noEmpleado'=>'required|max:5',
 
         ]);
         $admin->save(); 
@@ -53,6 +53,10 @@ class adminController extends Controller
     public function destroy($id)
     {
         $admin= Admin::find($id);
+        if($admin==null)
+        {
+            return view('errors.404');
+        }
         $admin->delete();
         session()->flash('message','Eliminado Correctamente');
         return redirect('admin/administradores');
@@ -63,6 +67,10 @@ class adminController extends Controller
     public function edit($id)
     {
         $admin=Admin::find($id);
+        if($admin==null)
+        {
+            return view('errors.404');
+        }
         $departamento = Departamento::all();
         $cargo=Cargo::all();
         $sucursal=Sucursal::all();
@@ -73,27 +81,18 @@ class adminController extends Controller
     }
     
     public function update(Admin $id)
-    {
-        /*$admin= Admin::find($id);
-        $admin->name = $request->name;
-        $admin->password = bcrypt($request->password);
-        $admin->departamento = $request->departamento;
-        $admin->cargo = $request->cargo;
-        $admin->telefono = $request->telefono;
-        $admin->direccion = $request->direccion;
-        $admin->sucursal = $request->sucursal; 
-        $admin->noEmpleado = $request->noEmpleado;*/
-
+    {   
+        
         $admin=request()->validate([
-            'name'=>'required',
+            'name'=>'required|max:30',
             'email'=>'required',
+            'password'=>'required|min:6|max:30',
             'departamento'=>'required',
             'cargo'=>'required',
-            'telefono'=>'required',
-            'direccion'=>'required',
-            'password'=>'',
+            'telefono'=>'required|max:10',
+            'direccion'=>'required|max:100',
             'sucursal'=>'required',
-            'noEmpleado'=>'required',
+            'noEmpleado'=>'required|max:5',
         ]); 
 
 

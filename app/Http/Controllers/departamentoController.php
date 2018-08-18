@@ -18,47 +18,44 @@ class departamentoController extends Controller
         $departamento = new Departamento;   
         $departamento->name = $request->name;
         $this->validate($request, [
-        'name'=>'required',
+        'name'=>'required|max:50',
         ]);
         $departamento->save(); 
-        return redirect('/admin/AltaDepartamento');
+        return redirect('/admin/altaDepartamento');
     }
     //Buscar el departamendo del id
     public function edit($id)
     {
-        $departamento = Departamento::all();
+        $departamento=Departamento::find($id);
+        if($departamento==null)
+        {
+            return view('errors.404');
+        }
         return view('admin.editarDepartamento',compact('departamento'));
     }
     
     public function update(Departamento $id)
     {
-
-
-        $admin=request()->validate([
+        $departamento=request()->validate([
             'name'=>'required',
-            'email'=>'required',
-            'departamento'=>'required',
-            'cargo'=>'required',
-            'telefono'=>'required',
-            'direccion'=>'required',
-            'password'=>'',
-            'sucursal'=>'required',
-            'noEmpleado'=>'required',
         ]); 
-
-        if($admin['password']!=null)
-        {
-         $admin['password']=bcrypt($admin['password']);
-        }else
-        {
-            unset($admin['password']);
-        } 
-
-
-  $id->update($admin);
+        $id->update($departamento);
   
 //dd($admin);
-  return redirect('admin/Departamentos')->with('success', 'Registro modificado correctamente');
+  return redirect('admin/departamentos')->with('success', 'Registro modificado correctamente');
 
-}
+    }
+    public function destroy($id)
+    {
+        $departamento= Departamento::find($id);
+        if($departamento==null)
+        {
+            return view('errors.404');
+        }
+        $departamento->delete();
+        session()->flash('message','Eliminado Correctamente');
+        return redirect('admin/departamentos');
+
+
+    }    
 }

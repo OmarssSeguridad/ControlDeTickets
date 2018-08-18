@@ -21,9 +21,9 @@ class sucursalController extends Controller
         $sucursal->direccion = $request->direccion;
         $sucursal->telefono = $request->telefono;
         $this->validate($request, [
-        'name'=>'required',
-        'direccion'=>'required',
-        'telefono'=>'required',
+        'name'=>'required|max:30',
+        'direccion'=>'required|max:100',
+        'telefono'=>'required|max:10',
         ]);
         $sucursal->save(); 
         return redirect('/admin/sucursales');
@@ -31,6 +31,10 @@ class sucursalController extends Controller
     public function destroy($id)
     {
         $sucursal= Sucursal::find($id);
+        if($sucursal==null)
+        {
+            return view('errors.404');
+        }
         $sucursal->delete();
         session()->flash('message','Eliminado Correctamente');
         return redirect('admin/sucursales');
@@ -42,6 +46,10 @@ class sucursalController extends Controller
     {
 
         $sucursal=Sucursal::find($id);
+        if($sucursal==null)
+        {
+            return view('errors.404');
+        }
         return view('admin.editarSucursal',compact('sucursal'));
     }
     
@@ -53,10 +61,10 @@ class sucursalController extends Controller
         $sucursal->telefono = $request->telefono;
 
         $this->validate($request, [
-        'name'=>'required',
-        'direccion'=>'required',
-        'telefono'=>'required',
-        ]);
+        'name'=>'required|max:50',
+        'direccion'=>'required|max:100',
+        'telefono'=>'required|max:10',    
+          ]);
         $sucursal->save(); 
   
         return redirect('/admin/editaSucursal/'.$id);

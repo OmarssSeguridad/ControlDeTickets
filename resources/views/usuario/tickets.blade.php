@@ -17,9 +17,7 @@
                                             <th>Usuario</th>
                                             <th>Sucursal</th>
                                             <th>Asunto</th>
-                                            <th>Detalle</th>
-                                            <th align="CENTER">Status</th>
-                                            <th>Evidencia</th>
+                                            <th> Status</th>
                                         </thead>
                                         @foreach ($ticket as $ticket) 
                                         <tbody>
@@ -28,7 +26,7 @@
                                                 <td>{{ $ticket->name }}</td>
                                                 <td>{{ $ticket->sucursal }}</td>
                                                 <td>{{ $ticket->asunto }}</td>
-                                                <td>{{ $ticket->detalle }}</td>
+
                                                 <td>
                                                     @if($ticket->status=="ALTA")
                                                         <form action="{{'/usuario/editaTicket/'.$ticket->id}}" method="GET">

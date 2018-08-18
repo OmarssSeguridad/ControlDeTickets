@@ -67,14 +67,32 @@ class perfilController extends Controller
         $sucursal = collect(DB::table('sucursals')->get());
         return view('admin.sucursales',compact('sucursal'));
     }
+    public function mostrarCargos()
+    {
+        $cargo = collect(DB::table('cargos')->get());
+        return view('admin.cargo',compact('cargo'));
+    }
+    public function mostrarDepartamentos()
+    {
+        $departamento = collect(DB::table('departamentos')->get());
+        return view('admin.departamento',compact('departamento'));
+    }
+
 
     //COMBOBOX
     public function combo()
     {
         $sucursal = Sucursal::all();
-        $cargo = Cargo::all();
+         $cargo = Cargo::all();
         $departamento = Departamento::all();
         return view('admin.altaAdmin', compact('sucursal','cargo','departamento'));
+    }
+    public function comboUsuario()
+    {
+        $sucursal = Sucursal::all();
+         $cargo = Cargo::all();
+        $departamento = Departamento::all();
+        return view('admin.altaUsuario', compact('sucursal','cargo','departamento'));
     }
      public function comboEdita()
     {
