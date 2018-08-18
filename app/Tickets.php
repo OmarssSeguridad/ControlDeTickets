@@ -27,5 +27,9 @@ class Tickets extends Model
     {
         return $this->belongsTo(Respuestas::class);
     }
+    public function imgStorage()
+    {
+        return $this->belongsTo(ImgStorage::class);
+    }
 
 }

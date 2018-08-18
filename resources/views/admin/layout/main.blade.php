@@ -19,6 +19,12 @@
     <link href="{{ asset('css/demo.css') }}" rel="stylesheet" />
     <!-- CSS PANEL -->
     <link href="{{ asset('css/panel.css') }}" rel="stylesheet" />
+    <!-- DropZone -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.css">
+  
+
+
     
 </head>
 
@@ -109,6 +115,18 @@
                             <p>Sucursales</p>
                         </a>
                     </li>
+                    <li>
+                        <a class="nav-link" href="{{ url('/admin/cargos') }}">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Cargos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ url('/admin/departamentos') }}">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Departamentos</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -121,6 +139,9 @@
                 <div class=" container-fluid  ">
                     <a class="navbar-brand" href="#"> Hola {{Auth::user()->name}} </a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
                         <ul class="nav navbar-nav mr-auto">

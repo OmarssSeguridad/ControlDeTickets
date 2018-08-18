@@ -34,10 +34,13 @@ Route::delete('/bajaAdmin/{id}','adminController@destroy');
 Route::delete('/bajaUsuario/{id}','usuarioController@destroy');
 Route::delete('/bajaTicket/{id}','ticketsController@destroy');
 Route::delete('/bajaSucursal/{id}','sucursalController@destroy');
+Route::delete('/bajaDepartamento/{id}','departamentoController@destroy');
+Route::delete('/bajaCargo/{id}','cargoController@destroy');
+
 
 //ComboBoxes
 Route::get('/altaAdmin', 'perfilController@combo');
-Route::get('/altaUsuario', 'perfilController@combo');
+Route::get('/altaUsuario', 'perfilController@comboUsuario');
 Route::get('/editaAdmin/{id}','perfilController@combo');
 
 //Modificaciones
@@ -50,8 +53,12 @@ Route::put('/editarUsuario/{id}','usuarioController@update');
 Route::get('/editaSucursal/{id}','sucursalController@edit')->name('editarUsuario');
 Route::put('/editarSucursal/{id}','sucursalController@update');
 
-//Route::get('/editaTicket/{id}','ticketsController@edit')->name('editarTicket');
-//Route::put('/editarTicket/{id}','ticketsController@update');
+Route::get('/editaDepartamento/{id}','departamentoController@edit')->name('editarDepartamento');
+Route::put('/editarDepartamento/{id}','departamentoController@update');
+
+Route::get('/editaCargo/{id}','cargoController@edit')->name('editarCargo');
+Route::put('/editarCargo/{id}','cargoController@update');
+
 
 
 //Dashboard
@@ -59,16 +66,20 @@ Route::get('/dashboard', 'perfilController@contenidoDashboard');
 
 //Respuestas
 //Route::get('/enviarRespuesta', 'respuestasController@create')->name('altaRespuesta');
-Route::post('/enviarRespuesta','respuestasController@storeUsuario');
+Route::post('/enviarRespuesta','respuestasController@store');
 
 //Status
 
-
+//Despliegues de tablas 
 Route::get('/perfil','perfilController@perfilAdministrador');
 Route::get('/administradores','perfilController@mostrarAdministradores');
 Route::get('/usuarios','perfilController@mostrarUsuarios');
 Route::get('/tickets','perfilController@mostrarTickets');
 Route::get('/sucursales','perfilController@mostrarSucursales');
+Route::get('/cargos','perfilController@mostrarCargos');
+Route::get('/departamentos','perfilController@mostrarDepartamentos')->name('departamentos');
+
+
 
 Route::get('/editaTicket/{id}', 'ticketsController@edit'); 
 

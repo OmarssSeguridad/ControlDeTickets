@@ -17,7 +17,7 @@
                                     <div class="col-md-5 px-1">
                                         <div class="form-group">
                                             <label>Usuario</label>
-                                            <input type="text" class="form-control" readonly="{{Auth::user()->name}}"  placeholder="name" name="name" value="{{ Auth::user()->name }}" >
+                                            <input type="text" class="form-control" readonly=""  placeholder="name" name="name" value="{{old('name',$tickets->name)}}" >
 
                                         </div>
                                     </div>
@@ -60,14 +60,24 @@
                                                     <option {{ $selectedSta== $status->name ? 'selected="selected"' : '' }} >{{$status->name}}</option>
                                                     @endforeach
                                                 </select>
-                                                <div class="col-md-6">
-                                                    <button type="submit" class="btn btn-primary">Cambiar Status</button>
-                                                </div>
+
                                                 @endif
                                             </form>
 
                                         </div>
                                     </div>
+
+                                    <div class="col-md-3 pl-1">
+                                        <div class="form-group">
+                                            <label>Evidencia</label></br>
+                                             @if($tickets->evidencia==null)
+                                             <label>No Hay Evidencia</label>
+                                             @else
+                                             <img src="/storage/{{$tickets->evidencia}}" >
+                                             @endif
+                                        </div>
+                                    </div>
+                                    
                                     <div class="col-md-12 px-3">
                                     <div class="form-group">
                                     <section id="respuestas">
@@ -88,7 +98,7 @@
                                     <div class="col-md-11 px-3">
                                     <div class="form-group">
                                     <section>
-                                        Respuesta
+
                                         <form action="/usuario/enviarRespuesta" method="POST">
                                             {{ csrf_field() }}
                                             <input type="hidden" name="id"  value="{{ $tickets->id }}" >
@@ -96,10 +106,12 @@
                                             <input type="hidden"   name="sucursal" value="{{$tickets->sucursal}}">
                                             <input type="hidden"  placeholder="Asunto" name="asunto" readonly="" value="{{$tickets->asunto}}">
                                             
-                                            
                                              @if($tickets->status=="FINALIZADO")
                                                 <h3 align="center" style="color:RED">TICKET CERRADO {{$tickets->updated_at}} </h3>
                                             @else
+                                             <label><p>Escriba una Respuesta</p></label>
+                                            </br>
+                                             <label><em>Para ayudarle mejor, le pedimos que sea especifico y detallado*</em></label>
                                             <textarea id="detalle" name="detalle" placeholder="Ingresar texto"rows="10" maxlength="255" class="form-control"></textarea>
                                             <button type="submit" class="btn btn-info btn-fill pull-right">Enviar Respuesta</button>
                                                 

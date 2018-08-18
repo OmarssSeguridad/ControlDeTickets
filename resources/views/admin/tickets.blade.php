@@ -17,7 +17,6 @@
                                             <th>Usuario</th>
                                             <th>Sucursal</th>
                                             <th>Asunto</th>
-                                            <th>Detalle</th>
                                             <th>Status</th>
                                             <th>Accion</th>
                                         </thead>
@@ -28,7 +27,7 @@
                                                 <td>{{ $ticket->name }}</td>
                                                 <td>{{ $ticket->sucursal }}</td>
                                                 <td>{{ $ticket->asunto }}</td>
-                                                <td>{{ $ticket->detalle }}</td>
+                                              
                                                 <td>
                                                     @if($ticket->status=="ALTA")
                                                         <form action="{{'/admin/editaTicket/'.$ticket->id}}" method="GET">
@@ -48,14 +47,13 @@
                                                         <button type="submit" style='width:130px' width=10  class="btn btn-success btn-fill pull-right">{{ $ticket->status }}</button>
                                                         </form>
                                                     @endif
-                                                </td>
                                                 
-                                                <td> 
+                                                    <td>
                                                 <form action="{{'/admin/bajaTicket/'.$ticket->id}}" method="post"> 
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
 
-                                                    <button type="submit"class="btn btn-danger btn-fill pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+                                                    <button  type="submit"class="btn btn-danger btn-fill pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
                                                 </form> 
                                                 </td>
                                             </tr>

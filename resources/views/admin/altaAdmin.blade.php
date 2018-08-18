@@ -6,7 +6,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Registar Administrador</h4>
+                                    <h4 class="card-title">Registrar Administrador</h4>
                                 </div>
                                 <div class="card-body">
                                  <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/altaAdmin') }}">
@@ -23,7 +23,7 @@
                                             <div class="col-md-3 px-1">
                                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                                     <label>Nombre</label>
-                                                    <input type="text" class="form-control" placeholder="Username" name="name" value="{{ old('name') }}" autofocus >
+                                                    <input type="text" class="form-control" placeholder="Username" maxlength="50" name="name" value="{{ old('name') }}" autofocus >
                                 @if ($errors->has('name'))
                                     <span class="alert alert-danger">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -35,7 +35,7 @@
                                             <div class="col-md-4 pl-1">
                                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                                     <label for="email">Correo Electronico</label>
-                                                    <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
+                                                    <input type="email" maxlength="50" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
                                 @if ($errors->has('email'))
                                     <span class="alert alert-danger">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -82,7 +82,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group{{ $errors->has('direccion') ? ' has-error' : '' }}">
                                                     <label>Direccion</label>
-                                                    <input type="text" class="form-control" placeholder="Direccion" name="direccion" value="{{ old('direccion') }}">
+                                                    <input type="text" class="form-control" placeholder="Direccion" maxlength="100"  name="direccion" value="{{ old('direccion') }}">
                                 @if ($errors->has('direccion'))
                                     <span class="alert alert-danger">
                                         <strong>{{ $errors->first('direccion') }}</strong>
@@ -110,7 +110,7 @@
                                             <div class="col-md-4 px-1">
                                                 <div class="form-group{{ $errors->has('noEmpleado') ? ' has-error' : '' }}">
                                                     <label>No. Empleado</label>
-                                                    <input type="number" class="form-control" placeholder="0000" name="noEmpleado" value="{{ old('noEmpleado') }}">
+                                                    <input type="number" class="form-control" placeholder="0000" min="0" maxlength="5" name="noEmpleado" value="{{ old('noEmpleado') }}">
                                @if ($errors->has('noEmpleado'))
                                     <span class="alert alert-danger">
                                         <strong>{{ $errors->first('noEmpleado') }}</strong>
@@ -121,7 +121,7 @@
                                             <div class="col-md-4 px-2">
                                                 <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }}">
                                                     <label>Telefono</label>
-                                                    <input type="number" class="form-control" placeholder="(000)0000000" name="telefono" value="{{ old('telefono') }}">
+                                                    <input type="number" min="0" maxlength="5" class="form-control" placeholder="(000)0000000" name="telefono" value="{{ old('telefono') }}">
 
                                 @if ($errors->has('telefono'))
                                     <span class="alert alert-danger">

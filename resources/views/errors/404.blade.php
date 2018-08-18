@@ -2,11 +2,12 @@
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}" />
+        <link rel="icon" type="image/png" href="{{ asset('/img/favicon.ico') }}" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="{{ asset('/img/favicon.ico') }}">
 
-        <title>Control de Tickets</title>
+        <title>Control de Tickets | Error 404</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -17,8 +18,8 @@
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
+                font-weight: 50;
+                height: 50vh;
                 margin: 0;
             }
 
@@ -47,9 +48,9 @@
             }
 
             .title {
-                font-size: 84px;
+                padding: 0 50px;
+                font-size: 47px;
             }
-
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -61,31 +62,36 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 15px;
+            }
+
+            @media (max-width: 799px) {
+                .title {
+                    font-size: 30px;
+                }
             }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <!-- <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>-->
-                    @endauth
-                </div>
-            @endif
-
             <div class="content">
                 <div class="title m-b-md">
-                    Control de Tickets
-                </div>
+                    Error 404<br><br>
+                    ¡Oh no! Tenemos un problema... Algo raro pasó:<br>
+                    * Ingresaste mal un dato<br>
+                    * Ingresaste mal una URL<br>
 
+                    En caso de no ser así, ve al siguiente enlace...
+                    
+                    <div class="links">
+                        <a href="{{ URL::previous() }}">Contacto</a>
+                    </div>
+
+                    ...Porqué alguien será despedido.
+                </div>
+                    
                 <div class="links">
-                   <a href="{{ url('admin/login') }}">Administrador</a>
-                    <a href="{{ url('usuario/login') }}">Usuario</a>
+                    <a href="{{ URL::previous() }}">También puedes volver a la paǵina anterior.</a>
                 </div>
             </div>
         </div>

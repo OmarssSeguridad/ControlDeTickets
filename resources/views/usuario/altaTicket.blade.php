@@ -23,13 +23,13 @@
 
 
                     <div class="card-body">
-                        <form role="form" method="POST" action="{{ url('/usuario/altaTicket') }}">
+                        <form role="form" method="POST" action="{{ url('/usuario/altaTicket') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-3 pr-1">
                                     <div class="form-group">
                                         <label>Folio</label>
-                                        <input type="text" class="form-control"readonly="" placeholder="" value="{{ $tic+1}}" >
+                                        <input type="text" class="form-control"readonly="" placeholder="" name="folio" value="{{ $tic+1}}" >
                                 </div>
                             </div>
 
@@ -53,7 +53,7 @@
                         <div class="col-md-12 pr-1">
                             <div class="form-group">
                                 <label>Asunto</label>
-                                <input type="text" class="form-control" placeholder="Asunto" name="asunto" value="{{old('asunto')}}">
+                                <input type="text" maxlength="50" class="form-control" placeholder="Asunto" name="asunto" value="{{old('asunto')}}">
                             </div>
                         </div>
 

@@ -25,7 +25,7 @@
                                             <div class="col-md-6 px-6">
                                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                                     <label>Departamento</label>
-                                                    <input type="text" class="form-control" placeholder="Sistemas" name="name" value="{{ old('name') }}" autofocus >
+                                                    <input type="text" class="form-control" placeholder="Sistemas" maxlength="50" name="name" value="{{ old('name') }}" autofocus >
                                 @if ($errors->has('name'))
                                     <span class="alert alert-danger">
                                         <strong>{{ $errors->first('name') }}</strong>
