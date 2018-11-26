@@ -8,4 +8,6 @@
 <p>Esperamos que sea resuelto a la brevedad, saludos.</p>
 <p align="center"> Hensa Distribuciones S.A. de C.V.</p>
 </div>
-<p>No responder a este correo, Gracias.</p>
+<p>Respuesta generada automaticamente, por favor no responder ni enviar correos a esta cuenta de correo.</p>
+
+<p>AVISO IMPORTANTE: Este correo electrónico y/o el material adjunto es para uso exclusivo de la persona o la entidad a la que expresamente se le ha enviado, el cual contiene información confidencial. Si no es el destinatario legítimo del mismo, por favor repórtelo inmediatamente con el administrador y elimínelo. Cualquier revisión, almacenamiento, retransmisión, difusión o cualquier otro uso de este correo, por personas o entidades distintas a las del destinatario legítimo, queda expresamente prohibida. Este correo electrónico no pretende ni debe ser considerado como constitutivo de ninguna relación legal, contractual o de otra índole similar. </p>
