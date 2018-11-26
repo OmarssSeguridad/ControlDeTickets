@@ -17,7 +17,7 @@
                                             <div class="col-md-6 pr-4">
                                                 <div class="form-group">
                                                     <label>Empresa</label>
-                                                    <input type="text" class="form-control" disabled="" placeholder="Company" value="Hensa Distribuciones S.A. de C.V.">
+                                                    <input type="text" class="form-control" disabled="" placeholder="Company" value="Control de Tickets">
                                                 </div>
                                             </div>
 

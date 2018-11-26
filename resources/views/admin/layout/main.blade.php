@@ -39,7 +39,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="" class="simple-text">
-                        Hensa Distribuciones S.A. de C.V.
+                        Control de Tickets :3 
                     </a>
                     </div>
                 <ul class="nav">
