@@ -57,7 +57,7 @@ public function store(Request $request)
     $asunto = $request->asunto;
     $detalle = $request->detalle;
     $status = $request->status;
-    Mail::send('emails.AltaTicket', [
+    Mail::send('emails.altaTicket', [
             'name'=> $name,
             'folio'=>$folio,
             'sucursal'=>$sucursal,
@@ -103,7 +103,7 @@ public function storeUsuario(Request $request)
     $asunto = $request->asunto;
     $detalle = $request->detalle;
     $status = $request->status;
-    Mail::send('emails.AltaTicket', [
+    Mail::send('emails.altaTicket', [
             'name'=> $name,
             'folio'=>$folio,
             'sucursal'=>$sucursal,
