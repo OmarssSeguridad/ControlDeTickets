@@ -6,7 +6,7 @@
 <p><b>Asunto:</b>&nbsp;{{ $asunto }}</p>
 
 <p>Esperamos que sea resuelto a la brevedad, saludos.</p>
-<p align="center"> Hensa Distribuciones S.A. de C.V.</p>
+<p align="center"> Centro Llantero de Toluca S.A. de C.V.</p>
 </div>
 <p>Respuesta generada automaticamente, por favor no responder ni enviar correos a esta cuenta de correo.</p>
 

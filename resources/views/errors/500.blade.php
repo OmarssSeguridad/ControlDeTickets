@@ -88,7 +88,7 @@
                     ¡Ups! Ocurrió un error, lo sentimos :(
                 </div>
                 <p>Hemos enviado a los mejores y más valientes en busca del error, todo deberá solucionarse a la brevedad. Vuelve a intentarlo dentro de 10 minutos.</p>
-                <p>Si el error persiste, puedes escribirnos a <a href="mailto:atencionaclientes@grupohensa.com.mx">atencionaclientes@grupohensa.com.mx</a></p>
+                <p>Si el error persiste, puedes escribirnos a <a href="mailto:Omar.blanco@8w.com.mx">Omar.blanco@8w.com.mx</a></p>
                 <br>
                 <p><a href="{{ URL::previous() }}">Volver a la página anterior...</a></p>
             </div>

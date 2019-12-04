@@ -7,7 +7,7 @@
 <p><b>Asunto:</b>&nbsp;{{ $asunto }}</p>
 
 <p>Esperamos que sea su problema se haya resuelto satisfactoriamente, saludos.</p>
-<p align="center"> Hensa Distribuciones S.A. de C.V.</p>
+<p align="center"> Centro Llantero de Toluca S.A. de C.V.</p>
 </div>
 
 

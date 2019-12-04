@@ -30,7 +30,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" >
-                    Hensa Distribuciones S.A. de C.V.
+                    _Centro Llantero de Toluca S.A. de C.V.
                 </a>
             </div>
 

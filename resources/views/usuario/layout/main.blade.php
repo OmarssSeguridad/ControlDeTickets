@@ -32,7 +32,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="" class="simple-text">
-                        Hensa Distribuciones S.A. de C.V.
+                        iTicket
                     </a>
                     </div>
                 <ul class="nav">
@@ -142,7 +142,7 @@
                             <script>
                                 document.write(new Date().getFullYear())
                             </script>
-                            <a href="">Hensa Distribuciones</a>, Hecho con ❤️ 
+                            <a href="">Centro Llantero de Toluca</a>, Hecho con ❤️ 
                         </p>
                     </nav>
                 </div>
@@ -164,12 +164,6 @@
 <script src="{{ asset('js/plugins/bootstrap-notify.js') }}"></script>
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="{{ asset('js/light-bootstrap-dashboard.js?v=2.0.1') }}" type="text/javascript"></script>
-<!--
-            <div class="content">
-                <div class="container-fluid">
-                    @yield('content2')
-                </div>
-            </div>
--->
+
 
 </html>

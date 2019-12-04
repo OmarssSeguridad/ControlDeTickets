@@ -505,7 +505,7 @@ demo = {
 
         $.notify({
             icon: "nc-icon nc-app",
-            message: "Bienvenido a <b>Control de Tickets</b> - de Hensa Distribuciones S.A. de C.V."
+            message: "Bienvenido a <b>iTicket</b> - de Centro Llantero de Toluca S.A. de C.V."
 
         }, {
             type: type[color],

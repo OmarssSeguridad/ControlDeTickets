@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Kracken Fit | Mantenimiento</title>
+        <title>Control de Tickets | Mantenimiento</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -88,7 +88,7 @@
                     Estamos experimentando dificultades técnicas
                 </div>
                 <p>Hemos enviado a los mejores y más valientes en busca del error, todo deberá solucionarse a la brevedad. Vuelve a intentarlo dentro de 10 minutos.</p>
-                <p>Si el error persiste, puedes escribirnos a <a href="mailto:atencionaclientes@grupohensa.com.mx">atencionaclientes@grupohensa.com.mx</a></p>
+                <p>Si el error persiste, puedes escribirnos a <a href="mailto:omar.blanco@8w.com.mx">omar.blanco@8w.com.mx</a></p>
             </div>
         </div>
     </body>
