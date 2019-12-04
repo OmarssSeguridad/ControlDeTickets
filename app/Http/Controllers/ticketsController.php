@@ -66,7 +66,7 @@ public function store(Request $request)
             'status'=>$status
 
         ], function(Message $message)use($request){
-        $message->to('omarblanco@grupohensa.com.mx','Sistemas')
+        $message->to('omar.blanco@8w.com.mx','Sistemas')
         ->subject($request->asunto);
     });
 
@@ -112,7 +112,7 @@ public function storeUsuario(Request $request)
             'status'=>$status
 
         ], function(Message $message)use($request){
-        $message->to('omarblanco@grupohensa.com.mx','Sistemas')
+        $message->to('omar.blanco@8w.com.mx','Sistemas')
         ->subject($request->asunto);
     });
      $tickets->save(); 

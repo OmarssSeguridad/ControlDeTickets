@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <h4><font color="Blue" face="Arial"><b>¡Bienvenido a Control de Tickets!</b></font></h4>   
+        <h4><font color="Blue" face="Arial"><b>¡Bienvenido a iTicket!</b></font></h4>   
             <font color="Black" face="Arial" style='text-align: justify'>
                 <b>
                 Con el fin de agilizar las solicitudes de soporte y tener un mejor servicio utilizamos un control de Tickets de soporte.
