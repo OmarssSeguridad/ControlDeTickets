@@ -86,7 +86,7 @@ public function storeUsuario(Request $request)
     {
         $file = $request->file('evidencia');
         //obtenemos el nombre del archivo
-        $nombre = "CLT".$request->folio.$request()->file->getClientOriginalName());
+        $nombre = "CLT".$request->folio.$request()->file->getClientOriginalName();
         $tickets->evidencia = $nombre;
            //indicamos que queremos guardar un nuevo archivo en el disco local
         \Storage::disk('local')->put($nombre,  \File::get($file));
