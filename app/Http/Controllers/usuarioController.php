@@ -14,7 +14,7 @@ class usuarioController extends Controller
 {
     public function create()
     {
-        return view('admin.AltaUsuario'); 
+        return view('admin.altaUsuario'); 
     }
     public function store(Request $request)
     {

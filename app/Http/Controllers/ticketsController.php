@@ -17,12 +17,12 @@ class ticketsController extends Controller
 public function create()
 {
     $tic = DB::table('tickets')->select('id')->max('id');
-    return view('admin.AltaTicket',compact('tic')); 
+    return view('admin.altaTicket',compact('tic')); 
 }
 public function createUsuario()
 {
     $tic = DB::table('tickets')->select('id')->max('id');
-    return view('usuario.AltaTicket',compact('tic')); 
+    return view('usuario.altaTicket',compact('tic')); 
 }
 
 public function store(Request $request)

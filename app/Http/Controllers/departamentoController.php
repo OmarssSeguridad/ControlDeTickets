@@ -9,7 +9,7 @@ class departamentoController extends Controller
 {
     public function create()
     {
-        return view('admin.AltaDepartamento'); 
+        return view('admin.altaDepartamento'); 
     }
     public function store(Request $request)
     {
