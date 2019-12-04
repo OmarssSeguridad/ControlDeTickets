@@ -74,7 +74,7 @@
                                              @if($tickets->evidencia==null)
                                              <label>No Hay Evidencia</label>
                                              @else
-                                             <img src="/storage/{{$tickets->evidencia}}" >
+                                             <img src="{{Storage::url($tickets->evidencia)}}" >
                                              @endif
                                         </div>
                                     </div>
