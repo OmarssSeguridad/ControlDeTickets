@@ -10,7 +10,7 @@ class sucursalController extends Controller
 {
     public function create()
     {
-        return view('admin.AltaSucursal'); 
+        return view('admin.altaSucursal'); 
     }
     public function store(Request $request)
     {
