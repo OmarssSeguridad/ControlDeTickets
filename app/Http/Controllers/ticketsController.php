@@ -41,7 +41,7 @@ public function store(Request $request)
         $nombre = "CLT".$request->folio.$file->getClientOriginalName();
         $tickets->evidencia = $nombre;
            //indicamos que queremos guardar un nuevo archivo en el disco local
-        \Storage::disk('public')->put($nombre,  \File::get($file));    
+        \Storage::disk('local')->put($nombre,  \File::get($file));    
     }
     $this->validate($request, [
         'asunto'=>'required',
@@ -89,7 +89,7 @@ public function storeUsuario(Request $request)
         $nombre = "CLT".$request->folio.$file->getClientOriginalName();
         $tickets->evidencia = $nombre;
            //indicamos que queremos guardar un nuevo archivo en el disco local
-        \Storage::disk('public')->put($nombre,  \File::get($file));
+        \Storage::disk('local')->put($nombre,  \File::get($file));
     }         
     
     $this->validate($request, [
